@@ -1,0 +1,238 @@
+# Replit Agent Prompt: Austin Gardner Executive Portfolio Website
+
+Build a professional, modern portfolio website for Austin Gardner, a Global Customer Experience executive leader seeking VP/Head of CX roles at high-growth B2B SaaS companies (Series B through pre-IPO).
+
+## Site Purpose
+This site serves as Austin's executive portfolio for recruiters, hiring managers, and C-suite decision-makers. It should position him as a strategic, metrics-driven CX leader who transforms post-sales organizations into revenue engines using frameworks, data, and AI automation.
+
+## Brand Voice & Design
+- **Executive-level sophistication**: Clean, confident, premium feel
+- **Data-forward**: Metrics and impact are heroes, not afterthoughts
+- **Modern but professional**: Think Stripe, Linear, or Notion—not flashy startup
+- **Mobile-responsive**: Recruiters browse on phones
+- **Fast-loading**: No unnecessary animations or heavy assets
+- **Color scheme**: Professional blues/grays with accent color for CTAs (suggest: Navy #1a365d, Slate gray #334155, Accent blue #3b82f6)
+
+## Site Structure
+
+### 1. Hero Section (Above the fold)
+**Headline**: "Austin Gardner: Global Customer Experience Leader"
+**Subheadline**: "Transforming post-sales teams into revenue engines through data, frameworks, and AI-driven automation"
+
+**Key Metrics Banner** (large, bold numbers):
+- 112% Net Revenue Retention
+- <1% Churn Rate
+- 60-Person Global Team
+- 2-3x YoY Revenue Growth
+- 45-50% Reduction in Time-to-Value
+
+**CTA Buttons**:
+- "View Resume" (PDF download)
+- "Schedule Intro Call" (Calendly link - placeholder for now)
+- "LinkedIn Profile"
+
+### 2. Executive Summary
+**Section Title**: "20 Years Building Revenue-Driving CX Organizations"
+
+**Content** (3-4 sentences):
+"Customer Experience executive with nearly 20 years building and scaling post-sales organizations that drive retention, expansion, and customer-led growth. Most recently led a 60-person global team at Higharc—delivering 112% NRR, <1% churn, and 2x YoY revenue growth across $350K+ enterprise accounts. Previously scaled CX functions through Series A-C at Syncari, Shopmonkey, and WordPress, consistently achieving 110%+ NRR while building teams that turn customers into advocates. Known for implementing AI-driven automation (90% ticket deflection via LLM), data-driven health frameworks, and cross-functional alignment that transforms CX into a growth engine."
+
+### 3. Core Competencies
+**Section Title**: "What I Bring to Your Organization"
+
+**Grid layout** (3 columns on desktop, 1 on mobile):
+
+**Column 1: Strategic Leadership**
+- Net Revenue Retention (NRR) Optimization
+- GTM Strategy & Execution
+- Cross-Functional Alignment (Sales, Product, Finance)
+- Team Building & Scaling (3→60 people)
+- Change Management & Digital Transformation
+
+**Column 2: Operational Excellence**
+- Solutions Consulting & Value Realization
+- Customer Health Analytics & Forecasting
+- Scaled SaaS Operations
+- Resource Forecasting & Capacity Planning
+- Voice of Customer & NPS Programs
+
+**Column 3: Innovation & Automation**
+- AI-driven automation (LLM, n8n workflows)
+- Data analytics dashboarding (Looker, PostHog, Pendo)
+- Enablement program development
+- Implementation frameworks that cut time-to-value 45-50%
+- Professional Services revenue generation ($1M+)
+
+### 4. Career Highlights
+**Section Title**: "Proven Results Across High-Growth SaaS"
+
+**Interactive timeline or card layout** for each role:
+
+**Higharc** (May 2024 - Dec 2025)
+*Head of Customer Experience*
+- Led 60-person global CX organization (Implementation, Success, Training, Support, Professional Services)
+- **112% NRR, <1% churn**, 2x YoY revenue growth across $350K+ ARR accounts
+- Built Training & Enablement from zero: 125+ sessions, 500+ learners
+- Launched Professional Services: **$1M+ first-year revenue**
+- Reduced time-to-value by **45%** through standardized frameworks
+
+**Syncari** (Mar 2022 - May 2024)
+*Head of Customer Experience*
+- **110%+ NRR** over 4 consecutive quarters
+- Built Implementation and ProServ frameworks: **50% reduction in time-to-value**
+- **3x expansion revenue growth** from existing accounts
+- Served on Executive team presenting to Board
+- Built executive CX dashboard that drove NRR optimization
+
+**Shopmonkey** (Apr 2020 - Mar 2022)
+*Head of Customer Success & Payments*
+- Built Customer Success from scratch during Series A-to-C growth
+- Managed **$21M+ ARR portfolio** with **99% retention**
+- Scaled CSM team from **3 to 16** supporting **3x YoY revenue expansion**
+- Built Payments team from zero: **2-8x subscription MRR growth**
+- President's Club recognition for customer-led revenue impact
+
+**Automattic | WordPress VIP** (Aug 2018 - Apr 2020)
+*Director, Cloud Platform Sales*
+- Closed 7-figure enterprise deals averaging **$1M+** (Samsung, P&G)
+- **Exceeded quota by 30-40% QoQ** for 6 consecutive quarters
+- Led Fortune 100 digital transformation initiatives
+
+**Previous Experience**:
+- Telaria (acquired by Magnite): Managed **$35M portfolio**, **1.5x revenue expansion YoY**
+- YuMe (acquired by Nexxen): 25+ media brands, **36% CSAT improvement**
+- Lockheed Martin: Managed 50+ partners, **$3M+ budget**, 100% on-time delivery
+
+### 5. Target Opportunity
+**Section Title**: "When I'm the Right Hire"
+
+**Grid layout** - problems Austin solves:
+
+**Problem Box 1**: "Churn rising as customer complexity increases"
+*Solution*: Implemented health frameworks and exec reporting that delivered 112% NRR and <1% churn across complex $350K+ accounts
+
+**Problem Box 2**: "Founders doing too much post-sales firefighting"
+*Solution*: Built scalable frameworks (onboarding, QBRs, escalation) that reduced founder involvement by 80%+ while improving outcomes
+
+**Problem Box 3**: "CS needs to be an expansion engine"
+*Solution*: Transformed CS orgs to drive 3x expansion revenue through data-driven health scoring, exec touchpoints, and value realization
+
+**Problem Box 4**: "Scaling CS after PMF, before predictability"
+*Solution*: Built repeatable processes across 3 companies that cut time-to-value 45-50% and enabled 2-3x YoY growth
+
+**Target Companies**:
+- **Ideal stage**: Series C through pre-IPO
+- **Good fit**: Series B or public companies
+- **Industries**: B2B SaaS, AI/ML platforms, Data/Analytics, IaaS, Real Estate/PropTech, Vertical SaaS
+
+**Customer Profiles**:
+- High-complexity B2B SaaS customers
+- SMB through Enterprise
+- High ACV focus ($100K+ ARR per customer)
+
+### 6. Skills & Tools
+**Section Title**: "Technical Stack & Capabilities"
+
+**Three-column layout**:
+
+**Customer Success & Operations**:
+Salesforce • HubSpot • PlanHat • Totango • Stripe • ClickUp • Asana • Notion
+
+**Analytics & Product**:
+Looker • Pendo • PostHog • Intercom • Zendesk • JIRA • Productboard • Gong • WorkRamp
+
+**AI & Automation**:
+Gemini • Claude • OpenAI API • n8n (workflow automation) • Custom LLM integrations
+
+### 7. Education & Contact
+**Section Title**: "Let's Connect"
+
+**Education**:
+B.S. Industrial Engineering — California Polytechnic State University & Azusa Pacific University
+
+**Location**:
+Boulder, CO | Remote preferred | Open to Denver/Boulder office or hybrid
+
+**Contact**:
+- Email: austin.s.gardner@gmail.com
+- Phone: (303) 903-0272
+- LinkedIn: linkedin.com/in/austinsgardner
+- Professional Career Chat Bot: [link if available]
+
+**CTA Section**:
+"Ready to transform your Customer Experience organization into a revenue engine?"
+- [Download Resume] button
+- [Schedule Call] button
+- [View LinkedIn] button
+
+### 8. Footer
+- Copyright © 2026 Austin Gardner
+- Links: Privacy Policy (placeholder) | Built with [your stack]
+- Social icons (LinkedIn, Email)
+
+## Technical Requirements
+
+**Build with**:
+- **Framework**: React + Vite (or Next.js if you prefer)
+- **Styling**: Tailwind CSS for responsive design
+- **Deployment**: Replit hosting or easily exportable
+- **Features**:
+  - Smooth scroll navigation
+  - PDF resume download functionality
+  - Responsive mobile design
+  - Fast page load (<2 seconds)
+  - Clean, professional typography (suggest: Inter or Helvetica)
+  - Subtle animations on scroll (fade-in, nothing distracting)
+  - SEO-friendly meta tags
+  - Analytics ready (Google Analytics placeholder)
+
+**Must-haves**:
+- Navigation menu (sticky header with: About, Experience, Skills, Contact)
+- Print-friendly styling
+- Accessible (WCAG AA compliance)
+- No broken layouts on mobile
+- Easy to update content (clear component structure)
+
+**Nice-to-haves**:
+- Dark mode toggle
+- Downloadable one-pager PDF (summary version)
+- Animated counter for key metrics
+- Testimonials section (placeholder for future)
+
+## Content Guidelines
+
+**Writing style**:
+- Executive-level confidence (peer to C-suite, not supplicant)
+- Metrics-driven (numbers first, context second)
+- Action verbs (Led, Built, Drove, Scaled, Delivered)
+- No jargon unless industry-standard
+- Short paragraphs (3-4 sentences max)
+
+**Visual hierarchy**:
+- Numbers should be LARGE and bold (key metrics)
+- Company names prominent
+- Job titles clear
+- Dates subtle but present
+- White space is a feature, not a bug
+
+## Deliverables
+
+1. Fully functional, responsive website
+2. Clean, commented code for easy future updates
+3. PDF resume download (use Austin Gardner - Resume.pdf content)
+4. Mobile-optimized layout
+5. Instructions for updating content
+
+## Success Criteria
+
+A recruiter should be able to:
+1. Understand Austin's value proposition in 30 seconds
+2. See key metrics immediately (112% NRR, 60-person team, etc.)
+3. Quickly assess if he's right for Series B-C CX roles
+4. Download resume and contact him in 2 clicks
+
+Make it impossible to ignore. Make it memorable. Make it convert.
+
+---
+
+**Start building.** Ask clarifying questions if needed, but default to executive-level polish and modern SaaS aesthetic. Austin is competing for $200K-$350K+ roles—the site should reflect that caliber.
