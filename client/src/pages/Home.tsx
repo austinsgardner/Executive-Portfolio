@@ -1,3 +1,4 @@
+import headshotPath from "@/assets/images/headshot.jpg";
 import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
@@ -28,6 +29,21 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.1),transparent_40%)]" />
 
         <div className="container px-4 md:px-6 relative z-10">
+          <div className="flex flex-col items-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-32 h-32 md:w-48 md:h-48 mb-8"
+            >
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+              <img 
+                src={headshotPath} 
+                alt="Austin Gardner" 
+                className="relative w-full h-full object-cover rounded-full border-2 border-primary/50 shadow-2xl z-10"
+              />
+            </motion.div>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +93,7 @@ export default function Home() {
             <MetricsCard value="112%" label="NRR Achieved" delay={0.2} />
             <MetricsCard value="<1%" label="Churn Rate" delay={0.3} />
             <MetricsCard value="$100M+" label="Revenue Managed" delay={0.4} />
-            <MetricsCard value="50+" label="Team Size" delay={0.5} />
+            <MetricsCard value="60+" label="Team Size" delay={0.5} />
           </div>
         </div>
       </section>
@@ -163,6 +179,109 @@ export default function Home() {
                 Leveraging AI, automation, and proactive support models to stay ahead of customer needs and market trends.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Testimonials/Quotes */}
+      <Section id="testimonials" className="bg-slate-900/50">
+        <SectionHeader 
+          title="Leadership Impact" 
+          subtitle="What clients and team members say about my leadership."
+          centered
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-8 rounded-2xl relative"
+          >
+            <div className="text-primary/40 absolute top-4 left-4 text-6xl font-serif">"</div>
+            <p className="text-lg italic text-slate-300 relative z-10 mb-6">
+              Austin drove horizontal alignment across leadership, and was a strong player coach with his team to lead by example and elevate our customers’ experience. He established strong foundations and fostered customer-led growth.
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-primary">TB</div>
+              <div>
+                <p className="font-bold">Travis B.</p>
+                <p className="text-xs text-muted-foreground uppercase">COO & Former Manager</p>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-8 rounded-2xl relative"
+          >
+            <div className="text-primary/40 absolute top-4 left-4 text-6xl font-serif">"</div>
+            <p className="text-lg italic text-slate-300 relative z-10 mb-6">
+              He is a leader that can make significant impact on company goals while making each person on his team feel celebrated and successful. The most approachable leader I have ever worked for.
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-purple-500">CW</div>
+              <div>
+                <p className="font-bold">Crissy W.</p>
+                <p className="text-xs text-muted-foreground uppercase">Director of Payments & Former Team Member</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* Frameworks & Models */}
+      <Section id="frameworks">
+        <SectionHeader 
+          title="CX Architecture" 
+          subtitle="Strategic frameworks I've built to scale customer organizations."
+          centered
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Rocket className="w-5 h-5 text-primary" />
+              CS Maturity Model
+            </h3>
+            <div className="flex justify-between items-center gap-2 text-xs font-bold uppercase tracking-widest mb-4">
+              <span className="text-slate-500">Reactive</span>
+              <ArrowRight className="w-3 h-3 text-slate-700" />
+              <span className="text-slate-400">Informed</span>
+              <ArrowRight className="w-3 h-3 text-slate-700" />
+              <span className="text-slate-300">Proactive</span>
+              <ArrowRight className="w-3 h-3 text-slate-700" />
+              <span className="text-primary">Predictive</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              A 4-stage evolution model for CX data maturity, moving from reactive firefighting to predictive customer intelligence.
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Users className="w-5 h-5 text-purple-500" />
+              Growth Pillars
+            </h3>
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              {['Expansion', 'Retention', 'Adoption', 'Advocacy'].map(p => (
+                <div key={p} className="bg-slate-800/50 py-1 px-2 rounded text-[10px] font-bold text-center border border-white/5">{p}</div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Core strategic pillars designed to turn post-sales functions into high-velocity revenue engines.
+            </p>
+          </div>
+          <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-all">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-emerald-500" />
+              Value Velocity
+            </h3>
+            <div className="bg-emerald-500/10 rounded-lg p-3 mb-4 text-center">
+              <span className="text-2xl font-bold text-emerald-500">50%</span>
+              <p className="text-[10px] uppercase font-bold text-emerald-600">Reduction in TTV</p>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Standardized onboarding and value realization frameworks that cut Time-to-Value by half.
+            </p>
           </div>
         </div>
       </Section>
