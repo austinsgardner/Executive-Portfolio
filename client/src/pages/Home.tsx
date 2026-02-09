@@ -60,12 +60,15 @@ export default function Home() {
                 Let's Talk Strategy
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button 
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-lg backdrop-blur-sm"
+              <a 
+                href="https://bit.ly/4bsidlm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-blue-600/20 text-blue-400 font-semibold rounded-xl border border-blue-500/30 hover:bg-blue-600/30 hover:border-blue-500/50 transition-all text-lg backdrop-blur-sm flex items-center gap-2"
               >
-                View Experience
-              </button>
+                <Zap className="w-5 h-5" />
+                Career Chatbot
+              </a>
             </div>
           </motion.div>
 
@@ -176,24 +179,28 @@ export default function Home() {
           {[
             {
               company: "Higharc",
+              url: "https://higharc.com",
               role: "Head of Customer Experience",
               metric: "140% NRR",
               desc: "Led post-sales strategy for Series B homebuilding platform."
             },
             {
               company: "Syncari",
+              url: "https://syncari.com",
               role: "VP of Customer Success",
               metric: "0% Churn",
               desc: "Built the CS function from ground up for data automation platform."
             },
             {
               company: "Shopmonkey",
+              url: "https://shopmonkey.io",
               role: "Director of Support",
               metric: "98% CSAT",
               desc: "Scaled support org during hyper-growth phase."
             },
             {
               company: "WordPress VIP",
+              url: "https://wpvip.com",
               role: "Director of Enterprise Support",
               metric: "Fortune 500",
               desc: "Managed global enterprise support for top-tier clients."
@@ -207,10 +214,12 @@ export default function Home() {
               transition={{ delay: i * 0.1 }}
               className="bg-card rounded-2xl p-6 border border-border hover:border-primary/50 transition-colors group"
             >
-              <div className="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center mb-4 text-white group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <Building2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-1">{job.company}</h3>
+              <a href={job.url} target="_blank" rel="noopener noreferrer" className="block">
+                <div className="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center mb-4 text-white group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Building2 className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{job.company}</h3>
+              </a>
               <p className="text-sm font-semibold text-primary mb-3">{job.role}</p>
               <div className="mb-4">
                 <span className="text-2xl font-bold text-white block">{job.metric}</span>
@@ -331,17 +340,17 @@ export default function Home() {
               </p>
               
               <div className="space-y-4">
-                <a href="mailto:hello@example.com" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
+                <a href="mailto:austin.s.gardner@gmail.com" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                     <Send className="w-4 h-4" />
                   </div>
-                  austin@example.com
+                  austin.s.gardner@gmail.com
                 </a>
-                <a href="#" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
+                <a href="https://linkedin.com/in/austinsgardner" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
                   <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                     <Users className="w-4 h-4" />
                   </div>
-                  linkedin.com/in/austingardner
+                  linkedin.com/in/austinsgardner
                 </a>
               </div>
             </div>

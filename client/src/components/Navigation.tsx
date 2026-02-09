@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Chatbot", href: "https://bit.ly/4bsidlm" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -54,13 +55,25 @@ export function Navigation() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
-            >
-              {item.label}
-            </button>
+            item.href.startsWith("http") ? (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
+              >
+                {item.label}
+              </button>
+            )
           ))}
           <a
             href="#"
@@ -91,13 +104,25 @@ export function Navigation() {
           >
             <div className="flex flex-col p-4 gap-4">
               {NAV_ITEMS.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 text-lg font-medium text-muted-foreground hover:text-white"
-                >
-                  {item.label}
-                </button>
+                item.href.startsWith("http") ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-left py-2 text-lg font-medium text-muted-foreground hover:text-white"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-left py-2 text-lg font-medium text-muted-foreground hover:text-white"
+                  >
+                    {item.label}
+                  </button>
+                )
               ))}
               <a
                 href="#"
