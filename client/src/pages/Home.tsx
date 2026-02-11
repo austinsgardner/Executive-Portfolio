@@ -59,13 +59,13 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Global Customer <br />
-              <span className="text-gradient">Experience Leader</span>
+              Fractional <br />
+              <span className="text-gradient">CX Executive</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Transforming post-sales teams into revenue engines. 
-              Driving growth through operational excellence and strategic innovation.
+              High-ROI automation, strategic frameworks, and data intelligence for startups and scale-ups. 
+              Available on a <span className="text-primary font-semibold">fractional or contractual basis</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -98,6 +98,102 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fractional Services / Initiatives */}
+      <Section id="services" className="bg-slate-900/50">
+        <SectionHeader 
+          title="Fractional CX Initiatives" 
+          subtitle="Strategic deliverables designed to scale your post-sales organization and drive ROI."
+          centered
+        />
+        
+        <div className="space-y-16 max-w-6xl mx-auto">
+          {/* Category 1 */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
+                <BarChart3 className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold">Customer Intelligence & Health Systems</h3>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Real-Time Health Engine",
+                  desc: "Composite health scores pulling product usage, sentiment, and support data into automated n8n alerting pipelines."
+                },
+                {
+                  title: "Expansion Propensity Model",
+                  desc: "Usage-based analytics identifying upsell signals with AI-generated briefs for high-probability expansion."
+                },
+                {
+                  title: "Early Warning System",
+                  desc: "Automated pipelines correlating declining engagement to flag contraction risk 60-90 days before renewal."
+                }
+              ].map((item, i) => (
+                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
+                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Category 2 */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold">Onboarding & Time-to-Value</h3>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Readiness Assessment",
+                  desc: "Structured pre-implementation frameworks and automated intake workflows to eliminate Sales-to-CS friction."
+                },
+                {
+                  title: "Implementation Machine",
+                  desc: "Align → Setup → Active Customer frameworks with project plans, milestone tracking, and capacity dashboards."
+                },
+                {
+                  title: "Digital-Touch Lifecycle",
+                  desc: "Automated, AI-personalized journey content (emails/in-app) triggered by critical behavior milestones."
+                }
+              ].map((item, i) => (
+                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
+                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Category 3 */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="text-2xl font-bold">CX Strategy & Infrastructure</h3>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: "Executive Dashboards", desc: "Board-ready reporting for NRR, GRR, and team performance automated via n8n." },
+                { title: "Journey Architecture", desc: "End-to-end strategic blueprints for post-sales stages and transitions." },
+                { title: "VoC Feedback Loop", desc: "Structured systems surfacing customer insights directly to Product via AI." },
+                { title: "AI-Powered Support", desc: "LLM-powered deflection systems reducing Tier 1 tickets by up to 90%." }
+              ].map((item, i) => (
+                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
+                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* About / Executive Summary */}
       <Section id="about" className="bg-slate-900/50">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -107,12 +203,12 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <SectionHeader title="Executive Summary" />
+            <SectionHeader title="Fractional CX Leader" />
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              With over 20 years of experience building revenue-driving Customer Experience organizations, I specialize in scaling operations for high-growth SaaS companies.
+              With over 20 years of experience building revenue-driving Customer Experience organizations, I now partner with startups and scale-ups as a fractional leader.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My approach combines data-driven strategy with human-centric leadership. I don't just fix support tickets; I build ecosystems where customer success drives product innovation and recurring revenue.
+              I specialize in moving CX from "gut feel" to predictive data, automating post-sales machines that drive retention, expansion, and high ROI. I'm available for strategic advisory, interim leadership, or contractual project-based delivery.
             </p>
             
             <div className="grid grid-cols-1 gap-4">
@@ -353,8 +449,8 @@ export default function Home() {
       {/* Problem Solving / Target Opportunity */}
       <Section id="opportunity" className="bg-slate-900/30">
         <SectionHeader 
-          title="Problems I Solve" 
-          subtitle="Where I deliver the most value for organizations."
+          title="Fractional Value" 
+          subtitle="High-impact interventions for high-growth startups."
         />
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -364,10 +460,10 @@ export default function Home() {
                 <div className="p-2 bg-red-500/10 rounded text-red-400">
                   <BarChart3 className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-lg">High Churn</h3>
+                <h3 className="font-bold text-lg">Predictable Churn Prevention</h3>
               </div>
               <p className="text-muted-foreground">
-                I identify leakage points in the customer journey and implement proactive health monitoring to save at-risk accounts before they leave.
+                Move from "gut feel" to data-driven visibility. I build the systems that flag risk 60-90 days before renewal, delivering save-play playbooks to your team.
               </p>
             </div>
           </div>
@@ -377,10 +473,10 @@ export default function Home() {
                 <div className="p-2 bg-orange-500/10 rounded text-orange-400">
                   <Zap className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-lg">Firefighting Mode</h3>
+                <h3 className="font-bold text-lg">Scalable Onboarding</h3>
               </div>
               <p className="text-muted-foreground">
-                Transitioning teams from reactive ticket-closing to proactive value-driving. Implementing playbooks that standardize excellence.
+                Stop founder-led firefighting. I package my Higharc systems (built for 60 people) for your team of 5-10, cutting time-to-value by 45%+.
               </p>
             </div>
           </div>
@@ -390,10 +486,10 @@ export default function Home() {
                 <div className="p-2 bg-blue-500/10 rounded text-blue-400">
                   <Rocket className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-lg">Scaling Pains</h3>
+                <h3 className="font-bold text-lg">Revenue-Engine CS</h3>
               </div>
               <p className="text-muted-foreground">
-                Building the infrastructure (people, process, technology) needed to go from $10M to $50M ARR without breaking the customer experience.
+                Transform Customer Success from a cost center into a growth engine. I implement the expansion models that drove 112% NRR at Higharc and Syncari.
               </p>
             </div>
           </div>
