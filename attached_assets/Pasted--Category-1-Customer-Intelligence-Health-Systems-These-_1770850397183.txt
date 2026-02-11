@@ -1,0 +1,28 @@
+🔧 Category 1: Customer Intelligence & Health Systems
+These are the "see around corners" deliverables—giving leadership real-time visibility into what's actually happening in their customer base instead of relying on CSM gut feel.
+1. Real-Time Customer Health Score Engine
+Build a composite health score pulling product usage telemetry (Pendo/PostHog), CSM sentiment inputs, support ticket velocity, and NPS/CSAT survey data into a single weighted dashboard. Automate alerting via n8n so at-risk accounts trigger Slack notifications and playbook assignments before a CSM even opens their laptop. You built exactly this at Higharc and Syncari—most Series B companies are still using spreadsheets.
+2. Expansion & Upsell Propensity Model
+Design analytics workflows that identify accounts showing high-probability upsell/cross-sell signals based on product usage patterns, feature adoption curves, and engagement depth. Pipe these into CRM with AI-generated account briefs so CSMs walk into expansion conversations armed with data, not hunches. This turns CS from a cost center into a revenue engine—the exact transformation you drove to 112% NRR.
+3. Churn & Contraction Early Warning System
+Build an automated pipeline that correlates declining login frequency, support sentiment shifts, and missed engagement milestones to flag contraction risk 60-90 days before renewal. Include AI-generated risk summaries and recommended save plays delivered to the account owner. Most companies don't know they've lost a customer until the renewal conversation. This fixes that.
+
+🚀 Category 2: Onboarding, Implementation & Time-to-Value Acceleration
+This is where you crush it—turning chaotic, founder-led onboarding into a repeatable machine that gets customers to value fast.
+4. Customer Readiness Assessment & Score
+Build a structured pre-implementation scoring framework that evaluates data readiness, stakeholder alignment, technical prerequisites, and change management capacity. Automate the intake via forms and n8n workflows so Sales → CS handoff is clean, expectations are set, and implementation plans are auto-generated based on readiness tier. You cut time-to-value by 45-50% across multiple companies doing exactly this.
+5. Implementation Playbook & Capacity Engine
+Design the full "Align → Setup → Active Customer" framework with templatized project plans, milestone tracking, QA gates, and a capacity/throughput dashboard. Includes automated status updates to customers and internal stakeholders. This is the Higharc system you built for 60 people—packaged for a team of 5-10.
+6. Digital-Touch Onboarding & Lifecycle Content Library
+Map the ideal customer journey, identify the 8-12 critical behavior milestones, and build automated content workflows (emails, in-app messages, video nudges) triggered by where the customer actually is vs. where they should be. Use AI to generate and personalize content at scale. Perfect for companies that have more customers than CSMs can touch 1:1.
+
+📊 Category 3: CX Strategy, Reporting & Executive Infrastructure
+These are the "get your house in order" engagements—the foundational systems that let a CX leader (or founder acting as one) actually run the function instead of firefighting.
+7. Executive CX Dashboard & Board-Ready Reporting
+Build a consolidated business/CX dashboard tracking NRR, GRR, time-to-value, health distribution, expansion pipeline, and team performance metrics. Automate data aggregation from Salesforce, product analytics, and support tools via n8n into Looker or a live reporting layer. You built this from scratch at Syncari and presented it to the Board—most startups don't have anything close.
+8. Customer Journey Mapping & Lifecycle Design
+Architect the end-to-end post-sales journey from signed contract through renewal and expansion, defining stages, ownership transitions, success milestones, and intervention triggers. Deliver a documented framework the team can execute against immediately. This is the strategic blueprint that everything else hangs on.
+9. Voice of Customer → Product Feedback Loop
+Build the system that captures, categorizes, and prioritizes customer feedback from support tickets, CSM notes, NPS verbatims, and QBRs—then surfaces it to Product in a structured, actionable format. Use AI to auto-tag themes and generate weekly insight digests. Closes the gap between "customers are asking for X" and Product actually hearing it with data behind it.
+10. AI-Powered Support Deflection & Knowledge System
+Design and deploy an LLM-powered support tool (à la your AskAgent build) that deflects Tier 1 tickets by surfacing contextual answers from your knowledge base, docs, and past tickets. Includes the workflow architecture, prompt engineering, and measurement framework. You hit 90% deflection at Higharc—for a startup spending $15-20K/mo on support headcount, this pays for itself in weeks.
