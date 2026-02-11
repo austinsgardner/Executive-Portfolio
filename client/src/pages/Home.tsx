@@ -24,9 +24,23 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+        {/* Cursor Following Background */}
+        <motion.div 
+          className="absolute inset-0 z-0 pointer-events-none"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
+            e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
+          }}
+          style={{
+            background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.1), transparent 80%)`,
+          } as any}
+        />
         {/* Background Gradients */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(59,130,246,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.1),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.05),transparent_40%)]" />
 
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center mb-12">
@@ -89,11 +103,24 @@ export default function Home() {
           </motion.div>
 
           {/* Hero Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 max-w-5xl mx-auto">
-            <MetricsCard value="112%" label="NRR Achieved" delay={0.2} />
-            <MetricsCard value="<1%" label="Churn Rate" delay={0.3} />
-            <MetricsCard value="$100M+" label="Revenue Managed" delay={0.4} />
-            <MetricsCard value="60+" label="Team Size" delay={0.5} />
+          <div className="mt-20 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-10 max-w-2xl mx-auto"
+            >
+              <p className="text-slate-400 leading-relaxed italic">
+                Austin has led Customer Experience functions at several high-velocity startups, scaling from Series A to C, including past employers such as <span className="text-white font-medium">Automattic</span> and <span className="text-white font-medium">Shopmonkey</span>.
+              </p>
+            </motion.div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <MetricsCard value="112%" label="NRR Achieved" delay={0.2} />
+              <MetricsCard value="<1%" label="Churn Rate" delay={0.3} />
+              <MetricsCard value="$100M+" label="Revenue Managed" delay={0.4} />
+              <MetricsCard value="60+" label="Team Size" delay={0.5} />
+            </div>
           </div>
         </div>
       </section>
