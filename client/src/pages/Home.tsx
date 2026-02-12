@@ -24,18 +24,35 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
-        {/* Cursor Following Background */}
+        {/* Interactive Grid Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+          <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="0.5" />
+              </pattern>
+              <radialGradient id="cursorGradient" r="300px" cx="var(--mouse-x, 50%)" cy="var(--mouse-y, 50%)" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="rgba(59, 130, 246, 0.3)" />
+                <stop offset="100%" stopColor="transparent" />
+              </radialGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            <rect width="100%" height="100%" fill="url(#cursorGradient)" />
+          </svg>
+        </div>
+
+        {/* Cursor Following Glow */}
         <motion.div 
           className="absolute inset-0 z-0 pointer-events-none"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
-            e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+            e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
           }}
           style={{
-            background: `radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.1), transparent 80%)`,
+            background: `radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59, 130, 246, 0.1), transparent 80%)`,
           } as any}
         />
         {/* Background Gradients */}
@@ -47,21 +64,25 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ 
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1] 
+              }}
+              whileHover={{ y: -5 }}
               className="relative w-32 h-32 md:w-48 md:h-48 mb-8"
             >
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-3xl animate-pulse" />
               <img 
                 src={headshotPath} 
                 alt="Austin Gardner" 
-                className="relative w-full h-full object-cover rounded-full border-2 border-primary/50 shadow-2xl z-10"
+                className="relative w-full h-full object-cover rounded-full border-2 border-primary/40 shadow-[0_0_50px_rgba(59,130,246,0.2)] z-10"
               />
             </motion.div>
           </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8">
