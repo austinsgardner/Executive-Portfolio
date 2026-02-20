@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,7 @@ const NAV_ITEMS = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -26,6 +27,10 @@ export function Navigation() {
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
+    if (location !== "/") {
+      window.location.href = `/${id}`;
+      return;
+    }
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -36,23 +41,22 @@ export function Navigation() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        isScrolled
+        isScrolled || location !== "/"
           ? "bg-background/80 backdrop-blur-md border-border/50 py-4 shadow-lg"
           : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <div 
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="cursor-pointer flex items-center gap-2 group"
-        >
-          <div className="w-8 h-8 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-display font-bold text-lg shadow-lg group-hover:shadow-blue-500/25 transition-all">
-            AG
+        <Link href="/">
+          <div className="cursor-pointer flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-display font-bold text-lg shadow-lg group-hover:shadow-blue-500/25 transition-all">
+              AG
+            </div>
+            <span className="font-display font-bold text-lg tracking-tight group-hover:text-primary transition-colors">
+              Austin Gardner
+            </span>
           </div>
-          <span className="font-display font-bold text-lg tracking-tight group-hover:text-primary transition-colors">
-            Austin Gardner
-          </span>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
