@@ -3,8 +3,9 @@ import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
 import { ContactForm } from "@/components/ContactForm";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 import { 
   ArrowRight, 
   BarChart3, 
@@ -17,6 +18,95 @@ import {
   Rocket,
   Send
 } from "lucide-react";
+
+const TESTIMONIALS = [
+  {
+    quote: "“We miss you…it just feels like no one was more influential and could drive more results for our business than you.”",
+    author: "Jeff S",
+    role: "Tint World COO & former client",
+    initials: "JS",
+    color: "text-primary"
+  },
+  {
+    quote: "“Austin is a tenacious leader without losing one bit of humility…he’s loved by clients, resourceful and ALWAYS solution oriented.”",
+    author: "Yona P",
+    role: "Enterprise CSM and former team member",
+    initials: "YP",
+    color: "text-purple-500"
+  },
+  {
+    quote: "Austin made a real impact and brought some much needed calmness and poise during a season of transition and chaos at Higharc. He was instrumental in aligning our team, creating both structure and strategy. It's clear he has always been a strong advocate for our team and our customer's success.",
+    author: "Kelly G",
+    role: "Sr. CSM and former team member",
+    initials: "KG",
+    color: "text-emerald-500"
+  },
+  {
+    quote: "Austin drove horizontal alignment across leadership, and was a strong player coach with his team to lead by example and elevate our customers’ experience. He established strong foundations and fostered customer-led growth.",
+    author: "Travis B.",
+    role: "COO & Former Manager",
+    initials: "TB",
+    color: "text-primary"
+  },
+  {
+    quote: "He is a leader that can make significant impact on company goals while making each person on his team feel celebrated and successful. The most approachable leader I have ever worked for.",
+    author: "Crissy W.",
+    role: "Director of Payments & Former Team Member",
+    initials: "CW",
+    color: "text-purple-500"
+  }
+];
+
+function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative h-[300px] md:h-[250px] flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.5 }}
+          className="glass-card p-8 md:p-12 rounded-3xl relative w-full"
+        >
+          <div className="text-primary/20 absolute top-4 left-6 text-7xl font-serif">"</div>
+          <p className="text-xl md:text-2xl italic text-slate-200 relative z-10 mb-8 leading-relaxed">
+            {TESTIMONIALS[current].quote}
+          </p>
+          <div className="flex items-center gap-4">
+            <div className={`w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center font-bold shadow-inner ${TESTIMONIALS[current].color}`}>
+              {TESTIMONIALS[current].initials}
+            </div>
+            <div>
+              <p className="font-bold text-lg text-white">{TESTIMONIALS[current].author}</p>
+              <p className="text-sm text-muted-foreground uppercase tracking-wider">{TESTIMONIALS[current].role}</p>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
+        {TESTIMONIALS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              current === i ? "w-8 bg-primary" : "bg-slate-700 hover:bg-slate-500"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -370,50 +460,15 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Testimonials/Quotes */}
+      {/* Testimonials/Quotes Section */}
       <Section id="testimonials" className="bg-slate-900/50">
         <SectionHeader 
           title="Leadership Impact" 
           subtitle="What clients and team members say about my leadership."
           centered
         />
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8 rounded-2xl relative"
-          >
-            <div className="text-primary/40 absolute top-4 left-4 text-6xl font-serif">"</div>
-            <p className="text-lg italic text-slate-300 relative z-10 mb-6">
-              Austin drove horizontal alignment across leadership, and was a strong player coach with his team to lead by example and elevate our customers’ experience. He established strong foundations and fostered customer-led growth.
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-primary">TB</div>
-              <div>
-                <p className="font-bold">Travis B.</p>
-                <p className="text-xs text-muted-foreground uppercase">COO & Former Manager</p>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-8 rounded-2xl relative"
-          >
-            <div className="text-primary/40 absolute top-4 left-4 text-6xl font-serif">"</div>
-            <p className="text-lg italic text-slate-300 relative z-10 mb-6">
-              He is a leader that can make significant impact on company goals while making each person on his team feel celebrated and successful. The most approachable leader I have ever worked for.
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-purple-500">CW</div>
-              <div>
-                <p className="font-bold">Crissy W.</p>
-                <p className="text-xs text-muted-foreground uppercase">Director of Payments & Former Team Member</p>
-              </div>
-            </div>
-          </motion.div>
+        <div className="max-w-4xl mx-auto">
+          <TestimonialCarousel />
         </div>
       </Section>
 
