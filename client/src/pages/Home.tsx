@@ -4,6 +4,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
 import { ContactForm } from "@/components/ContactForm";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { 
   ArrowRight, 
   BarChart3, 
@@ -157,30 +158,45 @@ export default function Home() {
         <div className="space-y-16 max-w-6xl mx-auto">
           {/* Category 1 */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
-                <BarChart3 className="w-6 h-6" />
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
+                  <BarChart3 className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold">Customer Intelligence & Health Systems</h3>
               </div>
-              <h3 className="text-2xl font-bold">Customer Intelligence & Health Systems</h3>
+              <Link href="/services/customer-intelligence">
+                <button className="text-primary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   title: "Real-Time Health Engine",
-                  desc: "Composite health scores pulling product usage, sentiment, and support data into automated n8n alerting pipelines."
+                  desc: "Composite health scores pulling product usage, sentiment, and support data into automated n8n alerting pipelines.",
+                  roi: "25% improvement in proactive intervention rates"
                 },
                 {
                   title: "Expansion Propensity Model",
-                  desc: "Usage-based analytics identifying upsell signals with AI-generated briefs for high-probability expansion."
+                  desc: "Usage-based analytics identifying upsell signals with AI-generated briefs for high-probability expansion.",
+                  roi: "15% increase in expansion revenue within 6 months"
                 },
                 {
                   title: "Early Warning System",
-                  desc: "Automated pipelines correlating declining engagement to flag contraction risk 60-90 days before renewal."
+                  desc: "Automated pipelines correlating declining engagement to flag contraction risk 60-90 days before renewal.",
+                  roi: "20% reduction in preventable churn"
                 }
               ].map((item, i) => (
                 <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
                   <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+                  <div className="pt-4 border-t border-white/5">
+                    <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Target ROI</p>
+                    <p className="text-xs text-white font-medium">{item.roi}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -188,30 +204,45 @@ export default function Home() {
 
           {/* Category 2 */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
-                <Zap className="w-6 h-6" />
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold">Onboarding & Time-to-Value</h3>
               </div>
-              <h3 className="text-2xl font-bold">Onboarding & Time-to-Value</h3>
+              <Link href="/services/onboarding">
+                <button className="text-emerald-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   title: "Readiness Assessment",
-                  desc: "Structured pre-implementation frameworks and automated intake workflows to eliminate Sales-to-CS friction."
+                  desc: "Structured pre-implementation frameworks and automated intake workflows to eliminate Sales-to-CS friction.",
+                  roi: "40% reduction in handoff delays"
                 },
                 {
                   title: "Implementation Machine",
-                  desc: "Align → Setup → Active Customer frameworks with project plans, milestone tracking, and capacity dashboards."
+                  desc: "Align → Setup → Active Customer frameworks with project plans, milestone tracking, and capacity dashboards.",
+                  roi: "50% faster time-to-first-value (TTFV)"
                 },
                 {
                   title: "Digital-Touch Lifecycle",
-                  desc: "Automated, AI-personalized journey content (emails/in-app) triggered by critical behavior milestones."
+                  desc: "Automated, AI-personalized journey content (emails/in-app) triggered by critical behavior milestones.",
+                  roi: "30% increase in feature adoption rates"
                 }
               ].map((item, i) => (
                 <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
                   <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+                  <div className="pt-4 border-t border-white/5">
+                    <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-1">Target ROI</p>
+                    <p className="text-xs text-white font-medium">{item.roi}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -219,22 +250,34 @@ export default function Home() {
 
           {/* Category 3 */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-                <Target className="w-6 h-6" />
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400">
+                  <Target className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold">CX Strategy & Infrastructure</h3>
               </div>
-              <h3 className="text-2xl font-bold">CX Strategy & Infrastructure</h3>
+              <Link href="/services/cx-strategy">
+                <button className="text-purple-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: "Executive Dashboards", desc: "Board-ready reporting for NRR, GRR, and team performance automated via n8n." },
-                { title: "Journey Architecture", desc: "End-to-end strategic blueprints for post-sales stages and transitions." },
-                { title: "VoC Feedback Loop", desc: "Structured systems surfacing customer insights directly to Product via AI." },
-                { title: "AI-Powered Support", desc: "LLM-powered deflection systems reducing Tier 1 tickets by up to 90%." }
+                { title: "Executive Dashboards", desc: "Board-ready reporting for NRR, GRR, and team performance automated via n8n.", roi: "10+ hours saved weekly" },
+                { title: "Journey Architecture", desc: "End-to-end strategic blueprints for post-sales stages and transitions.", roi: "Unified Customer Experience" },
+                { title: "VoC Feedback Loop", desc: "Structured systems surfacing customer insights directly to Product via AI.", roi: "EBITDA-focused roadmap" },
+                { title: "AI-Powered Support", desc: "LLM-powered deflection systems reducing Tier 1 tickets by up to 90%.", roi: "90% deflection rate" }
               ].map((item, i) => (
                 <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
                   <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+                  <div className="pt-4 border-t border-white/5">
+                    <p className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Target ROI</p>
+                    <p className="text-xs text-white font-medium">{item.roi}</p>
+                  </div>
                 </div>
               ))}
             </div>
