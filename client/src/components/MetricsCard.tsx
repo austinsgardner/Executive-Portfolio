@@ -18,8 +18,8 @@ function CountUp({ value }: { value: string }) {
   const numericMatch = value.match(/(\d+)/);
   const numberValue = numericMatch ? parseInt(numericMatch[0]) : 0;
   const suffix = value.replace(String(numberValue), "");
-  const prefix = value.startsWith("<") ? "<" : "";
-  const cleanSuffix = suffix.replace("<", "");
+  const prefix = value.match(/^[^\d]+/)?.[0] || "";
+  const cleanSuffix = suffix.replace(prefix, "");
 
   const spring = useSpring(0, {
     mass: 1,
