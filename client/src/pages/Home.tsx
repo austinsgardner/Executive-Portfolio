@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
 import { 
   ArrowRight, 
   BarChart3, 
@@ -67,33 +68,61 @@ function TestimonialCarousel() {
     return () => clearInterval(timer);
   }, []);
 
+  const getVisibleIndices = () => {
+    const prev = (current - 1 + TESTIMONIALS.length) % TESTIMONIALS.length;
+    const next = (current + 1) % TESTIMONIALS.length;
+    return [prev, current, next];
+  };
+
+  const visibleIndices = getVisibleIndices();
+
   return (
-    <div className="relative h-[300px] md:h-[250px] flex items-center justify-center">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.5 }}
-          className="glass-card p-8 md:p-12 rounded-3xl relative w-full"
-        >
-          <div className="text-primary/20 absolute top-4 left-6 text-7xl font-serif">"</div>
-          <p className="text-xl md:text-2xl italic text-slate-200 relative z-10 mb-8 leading-relaxed">
-            {TESTIMONIALS[current].quote}
-          </p>
-          <div className="flex items-center gap-4">
-            <div className={`w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center font-bold shadow-inner ${TESTIMONIALS[current].color}`}>
-              {TESTIMONIALS[current].initials}
-            </div>
-            <div>
-              <p className="font-bold text-lg text-white">{TESTIMONIALS[current].author}</p>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider">{TESTIMONIALS[current].role}</p>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
+    <div className="relative h-[450px] md:h-[400px] w-full overflow-hidden px-4">
+      {/* Edge Fading Overlays */}
+      <div className="absolute left-0 top-0 bottom-0 w-32 z-20 bg-gradient-to-r from-background to-transparent pointer-events-none hidden md:block" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 z-20 bg-gradient-to-l from-background to-transparent pointer-events-none hidden md:block" />
+
+      <div className="flex justify-center items-center h-full gap-4 md:gap-8">
+        {visibleIndices.map((idx, i) => {
+          const isCenter = i === 1;
+          return (
+            <motion.div
+              key={`${idx}-${i}`}
+              initial={false}
+              animate={{
+                scale: isCenter ? 1 : 0.85,
+                opacity: isCenter ? 1 : 0.3,
+                x: i === 0 ? -20 : i === 2 ? 20 : 0,
+                zIndex: isCenter ? 10 : 0,
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className={cn(
+                "glass-card p-6 md:p-10 rounded-3xl relative w-full max-w-[500px] flex-shrink-0",
+                !isCenter && "blur-[1px]"
+              )}
+            >
+              <div className="text-primary/20 absolute top-4 left-6 text-6xl font-serif">"</div>
+              <p className={cn(
+                "italic text-slate-200 relative z-10 mb-6 leading-relaxed",
+                isCenter ? "text-lg md:text-xl" : "text-sm md:text-base line-clamp-4"
+              )}>
+                {TESTIMONIALS[idx].quote}
+              </p>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className={`w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold shadow-inner ${TESTIMONIALS[idx].color}`}>
+                  {TESTIMONIALS[idx].initials}
+                </div>
+                <div>
+                  <p className="font-bold text-base text-white">{TESTIMONIALS[idx].author}</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{TESTIMONIALS[idx].role}</p>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
         {TESTIMONIALS.map((_, i) => (
           <button
             key={i}
@@ -224,7 +253,11 @@ export default function Home() {
               className="text-center mb-10 max-w-2xl mx-auto"
             >
               <p className="text-slate-400 leading-relaxed italic">
-                Austin has led Customer Experience functions at several high-velocity startups, scaling from Series A to C, including past employers such as <span className="text-white font-medium">Automattic</span> and <span className="text-white font-medium">Shopmonkey</span>.
+                Austin has led Customer Experience functions at several high-velocity startups, scaling from Series A to C, including past employers such as{" "}
+                <a href="https://wpvip.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">Automattic/WordPress</a>,{" "}
+                <a href="https://www.shopmonkey.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">Shopmonkey</a>,{" "}
+                <a href="https://www.syncari.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">Syncari</a>, and{" "}
+                <a href="https://www.higharc.com" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">Higharc</a>.
               </p>
             </motion.div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
