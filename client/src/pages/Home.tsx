@@ -270,143 +270,148 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fractional Services / Initiatives */}
-      <Section id="services" className="bg-slate-900/50">
-        <SectionHeader 
-          title="Fractional CX Initiatives" 
-          subtitle="Strategic deliverables designed to scale your post-sales organization and drive ROI."
-          centered
-        />
-        
-        <div className="space-y-16 max-w-6xl mx-auto">
-          {/* Category 1 */}
-          <div>
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
-                  <BarChart3 className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold">Customer Intelligence & Health Systems</h3>
+      {/* Pricing & Engagement Models */}
+      <Section id="engagement" className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
+        <div className="container px-4 md:px-6 relative z-10">
+          <SectionHeader
+            title="Engagement Models"
+            subtitle="Flexible ways to partner and drive immediate impact."
+            centered
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mt-12">
+            {/* Package A */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 rounded-3xl relative flex flex-col group hover:border-primary/50 transition-all hover:-translate-y-1"
+            >
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-1">The Strategic Advisor</h3>
+                <p className="text-primary font-medium">"The Sounding Board"</p>
               </div>
-              <Link href="/services/customer-intelligence">
-                <button className="text-primary hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Real-Time Health Engine",
-                  desc: "Composite health scores pulling product usage, sentiment, and support data into automated n8n alerting pipelines.",
-                  roi: "25% improvement in proactive intervention rates"
-                },
-                {
-                  title: "Expansion Propensity Model",
-                  desc: "Usage-based analytics identifying upsell signals with AI-generated briefs for high-probability expansion.",
-                  roi: "15% increase in expansion revenue within 6 months"
-                },
-                {
-                  title: "Early Warning System",
-                  desc: "Automated pipelines correlating declining engagement to flag contraction risk 60-90 days before renewal.",
-                  roi: "20% reduction in preventable churn"
-                }
-              ].map((item, i) => (
-                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
-                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
-                  <div className="pt-4 border-t border-white/5">
-                    <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Target ROI</p>
-                    <p className="text-xs text-white font-medium">{item.roi}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+              <div className="text-3xl font-bold text-white mb-6">$3,500 <span className="text-sm text-slate-400 font-normal">/ month</span></div>
+              <p className="text-slate-400 text-sm mb-6">For founders who have a team but need an executive navigator.</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                {[
+                  "2x Monthly Strategy Calls",
+                  "Async Slack/Email support",
+                  "Hiring & Org Design review",
+                  "Quarterly Roadmap Audit"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
+                    <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://calendly.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-bold text-center hover:bg-slate-700 transition-colors"
+              >
+                Book Strategic Audit
+              </a>
+            </motion.div>
 
-          {/* Category 2 */}
-          <div>
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
-                  <Zap className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold">Onboarding & Time-to-Value</h3>
+            {/* Package B */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="glass-card p-8 rounded-3xl relative flex flex-col border-primary/50 bg-primary/5 group hover:border-primary transition-all hover:-translate-y-2 md:scale-105 z-10"
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full uppercase tracking-widest">
+                Most Popular
               </div>
-              <Link href="/services/onboarding">
-                <button className="text-emerald-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Readiness Assessment",
-                  desc: "Structured pre-implementation frameworks and automated intake workflows to eliminate Sales-to-CS friction.",
-                  roi: "40% reduction in handoff delays"
-                },
-                {
-                  title: "Implementation Machine",
-                  desc: "Align → Setup → Active Customer frameworks with project plans, milestone tracking, and capacity dashboards.",
-                  roi: "50% faster time-to-first-value (TTFV)"
-                },
-                {
-                  title: "Digital-Touch Lifecycle",
-                  desc: "Automated, AI-personalized journey content (emails/in-app) triggered by critical behavior milestones.",
-                  roi: "30% increase in feature adoption rates"
-                }
-              ].map((item, i) => (
-                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
-                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
-                  <div className="pt-4 border-t border-white/5">
-                    <p className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-1">Target ROI</p>
-                    <p className="text-xs text-white font-medium">{item.roi}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-1">Fractional CCO / Head of CS</h3>
+                <p className="text-primary font-medium">"Embedded Leadership"</p>
+              </div>
+              <div className="text-3xl font-bold text-white mb-6">Starting at $9,000 <span className="text-sm text-slate-400 font-normal">/ month</span></div>
+              <p className="text-slate-400 text-sm mb-6">I act as an embedded executive 1 day per week to drive scale.</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                {[
+                  "Churn & NRR Ownership",
+                  "Full Playbook Architecture",
+                  "Team Leadership & Coaching",
+                  "AI-Ops Systems Implementation (n8n)",
+                  "Board Deck CX Contribution"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
+                    <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://calendly.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-primary text-primary-foreground font-bold text-center hover:bg-primary/90 transition-colors"
+              >
+                Book Strategic Audit
+              </a>
+            </motion.div>
 
-          {/* Category 3 */}
-          <div>
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-                  <Target className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold">CX Strategy & Infrastructure</h3>
+            {/* Package C */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass-card p-8 rounded-3xl relative flex flex-col group hover:border-primary/50 transition-all hover:-translate-y-1"
+            >
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-1">CX + AI Ops Sprint</h3>
+                <p className="text-primary font-medium">"The Infrastructure Build"</p>
               </div>
-              <Link href="/services/cx-strategy">
-                <button className="text-purple-400 hover:text-white transition-colors flex items-center gap-2 text-sm font-bold group">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: "Executive Dashboards", desc: "Board-ready reporting for NRR, GRR, and team performance automated via n8n.", roi: "10+ hours saved weekly" },
-                { title: "Journey Architecture", desc: "End-to-end strategic blueprints for post-sales stages and transitions.", roi: "Unified Customer Experience" },
-                { title: "VoC Feedback Loop", desc: "Structured systems surfacing customer insights directly to Product via AI.", roi: "EBITDA-focused roadmap" },
-                { title: "AI-Powered Support", desc: "LLM-powered deflection systems reducing Tier 1 tickets by up to 90%.", roi: "90% deflection rate" }
-              ].map((item, i) => (
-                <div key={i} className="glass-card p-6 rounded-xl border border-white/5 hover:border-primary/30 transition-all">
-                  <h4 className="font-bold mb-3 text-white">{item.title}</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed mb-4">{item.desc}</p>
-                  <div className="pt-4 border-t border-white/5">
-                    <p className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Target ROI</p>
-                    <p className="text-xs text-white font-medium">{item.roi}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              <div className="text-3xl font-bold text-white mb-6">$20,000 <span className="text-sm text-slate-400 font-normal">(6-Week Sprint)</span></div>
+              <p className="text-slate-400 text-sm mb-6">For startups with a "bleeding neck" problem needing immediate automation.</p>
+              <ul className="space-y-4 mb-8 flex-grow">
+                {[
+                  "End-to-end n8n Automation Build",
+                  "Automated Onboarding Flows",
+                  "Customer Health Score Setup",
+                  "Tech-Stack Consolidation",
+                  "Team Training"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
+                    <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://calendly.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-bold text-center hover:bg-slate-700 transition-colors"
+              >
+                Book Strategic Audit
+              </a>
+            </motion.div>
           </div>
         </div>
       </Section>
+
+      {/* Specialization Section */}
+      <Section className="bg-slate-900/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-8">Industry Specialization</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {["Vertical SaaS", "PropTech", "Data Platforms", "B2B Tech", "FinTech"].map((spec) => (
+              <span key={spec} className="px-8 py-3 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-300 font-semibold backdrop-blur-sm">
+                {spec}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Section>
+
 
       {/* About / Executive Summary */}
       <Section id="about" className="bg-slate-900/50">
