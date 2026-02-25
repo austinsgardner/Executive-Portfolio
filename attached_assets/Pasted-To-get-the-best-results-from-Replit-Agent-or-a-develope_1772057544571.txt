@@ -1,0 +1,57 @@
+To get the best results from Replit Agent (or a developer using Replit), you need a prompt that combines business intent with technical requirements. Replit Agent works best when you give it a "vibe" to follow and clear logic for the tiers.
+
+Here is a high-leverage prompt you can copy and paste directly into Replit.
+
+The Replit Prompt
+Role: You are a world-class web developer and UI designer.
+Task: Build a high-conversion, premium single-page website for my solo fractional consulting practice.
+
+Brand Aesthetic:
+The design must look like a top-tier B2B SaaS product (think: Stripe, Linear, or Vercel). Use a dark-mode theme with deep navy/slate backgrounds (#0f172a), clean typography (Inter or Geist), and subtle "glassmorphism" card effects. Use Tailwind CSS for styling and Lucide-React for iconography.
+
+The Core Section: Three Engagement Packages
+The heart of the site is a "Pricing & Engagement" section featuring three distinct cards. Each card must have a clear title, a "subtitle" that defines the role, a price, and a list of high-value outcomes.
+
+Package A: The Strategic Advisor (Low-Touch)
+
+Subtitle: "The Sounding Board"
+
+Price: $3,500 / month
+
+Logic: For founders who have a team but need an executive navigator.
+
+Features: 2x Monthly Strategy Calls, Async Slack/Email support, Hiring & Org Design review, Quarterly Roadmap Audit.
+
+Package B: Fractional CCO / Head of CS (The Anchor)
+
+Subtitle: "Embedded Leadership"
+
+Price: Starting at $9,000 / month
+
+Logic: Highlight this as the "Most Popular" or "Best Value." I act as an embedded executive 1 day per week.
+
+Features: Churn & NRR Ownership, Full Playbook Architecture, Team Leadership & Coaching, AI-Ops Systems Implementation (n8n), Board Deck CX Contribution.
+
+Package C: CX + AI Ops Sprint (Project)
+
+Subtitle: "The Infrastructure Build"
+
+Price: $20,000 (6-Week Sprint)
+
+Logic: For startups with a "bleeding neck" problem needing immediate automation.
+
+Features: End-to-end n8n Automation Build, Automated Onboarding Flows, Customer Health Score Setup, Tech-Stack Consolidation, Team Training.
+
+Technical Requirements:
+
+Mobile First: The grid must collapse beautifully on mobile.
+
+Interactivity: Hover states on cards should have a subtle glow or scale effect.
+
+Specific Verticals: Include a "Specialization" section mentioning Vertical SaaS, PropTech, and Data Platforms.
+
+Contact: Instead of a complex form, add a "Book Strategic Audit" button that links to a placeholder URL (to be replaced with my Calendly).
+
+Copywriting Tone: Direct, outcome-oriented, and executive. Avoid "consulting fluff." Use terms like "NRR," "Time-to-Value," and "Automation Leverage."
+
+Deliverable: A single-file React component using Tailwind CSS that is ready for deployment.
