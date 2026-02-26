@@ -10,7 +10,11 @@ export const inquiries = pgTable("inquiries", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertInquirySchema = createInsertSchema(inquiries).omit({ 
+export const insertInquirySchema = createInsertSchema(inquiries, {
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address").min(1, "Email is required"),
+  message: z.string().min(1, "Message is required"),
+}).omit({ 
   id: true, 
   createdAt: true 
 });
