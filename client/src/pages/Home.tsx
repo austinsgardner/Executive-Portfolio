@@ -580,29 +580,29 @@ export default function Home() {
               company: "Higharc",
               url: "https://higharc.com",
               role: "Head of Customer Experience",
-              metric: "140% NRR",
-              desc: "Led post-sales strategy for Series B homebuilding platform."
+              metric: "112% NRR",
+              desc: "Led 60-person global CX organization across Implementation, Success, and Support."
             },
             {
               company: "Syncari",
               url: "https://syncari.com",
-              role: "VP of Customer Success",
-              metric: "0% Churn",
-              desc: "Built the CS function from ground up for data automation platform."
+              role: "Head of Customer Experience",
+              metric: "50% Reduction",
+              desc: "Cut Time-To-Value by 50% while achieving 110%+ NRR over 4 consecutive quarters."
             },
             {
               company: "Shopmonkey",
               url: "https://shopmonkey.io",
-              role: "Director of Support",
-              metric: "98% CSAT",
-              desc: "Scaled support org during hyper-growth phase."
+              role: "Head of Customer Success & Payments",
+              metric: "3x Expansion",
+              desc: "Built CS and Payments teams from zero, delivering 3x YoY revenue growth."
             },
             {
               company: "WordPress VIP",
               url: "https://wpvip.com",
-              role: "Director of Enterprise Support",
-              metric: "Fortune 500",
-              desc: "Managed global enterprise support for top-tier clients."
+              role: "Director, Cloud Platform Sales",
+              metric: "30% Growth",
+              desc: "Exceeded new revenue bookings quota by 30-40% QoQ across 6 consecutive quarters."
             }
           ].map((job, i) => (
             <motion.div
@@ -624,7 +624,7 @@ export default function Home() {
                 <span className="text-2xl font-bold text-white block">{job.metric}</span>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">Key Impact</span>
               </div>
-              <p className="text-sm text-slate-400">{job.desc}</p>
+              <p className="text-sm text-slate-400 min-h-[40px]">{job.desc}</p>
             </motion.div>
           ))}
         </div>
