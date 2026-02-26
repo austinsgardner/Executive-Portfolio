@@ -12,6 +12,9 @@ export async function registerRoutes(
     try {
       const input = api.inquiries.create.input.parse(req.body);
       const inquiry = await storage.createInquiry(input);
+      
+      console.log(`Email notification for Austin: New inquiry from ${input.name} (${input.email}). Message: ${input.message}`);
+      
       res.status(201).json(inquiry);
     } catch (err) {
       if (err instanceof z.ZodError) {
