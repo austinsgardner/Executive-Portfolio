@@ -82,7 +82,8 @@ export function Navigation() {
             )
           ))}
           <a
-            href="#"
+            href="/Austin_Gardner_Resume.pdf"
+            download="Austin_Gardner_Resume.pdf"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-sm font-medium transition-all"
           >
             <Download className="w-4 h-4" />
@@ -131,7 +132,8 @@ export function Navigation() {
                 )
               ))}
               <a
-                href="#"
+                href="/Austin_Gardner_Resume.pdf"
+                download="Austin_Gardner_Resume.pdf"
                 className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-primary text-primary-foreground font-semibold"
               >
                 <Download className="w-4 h-4" />
