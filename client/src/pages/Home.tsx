@@ -2,7 +2,6 @@ import headshotPath from "@/assets/images/headshot.jpg";
 import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
-import { ContactForm } from "@/components/ContactForm";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
@@ -728,36 +727,32 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Contact */}
-      <Section id="contact" className="bg-gradient-to-b from-transparent to-black/20">
-        <div className="max-w-5xl mx-auto glass-card rounded-3xl overflow-hidden shadow-2xl border border-white/5">
-          <div className="grid md:grid-cols-2">
-            <div className="p-10 md:p-14 bg-gradient-to-br from-primary/20 to-slate-900 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's build something great.</h2>
-              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                Whether you need a fractional CX leader, an advisor for your startup, or a full-time executive to scale your operations, I'm ready to help.
-              </p>
-              
-              <div className="space-y-4">
-                <a href="mailto:austin.s.gardner@gmail.com" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Send className="w-4 h-4" />
-                  </div>
-                  austin.s.gardner@gmail.com
-                </a>
-                <a href="https://linkedin.com/in/austinsgardner" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white hover:text-primary transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Users className="w-4 h-4" />
-                  </div>
-                  linkedin.com/in/austinsgardner
-                </a>
-              </div>
-            </div>
-            
-            <div className="p-10 md:p-14 bg-slate-900/50">
-              <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-              <ContactForm />
-            </div>
+      {/* Contact / CTA Section */}
+      <Section id="contact" className="bg-primary/5">
+        <div className="max-w-4xl mx-auto text-center">
+          <SectionHeader 
+            title="Let's Build the Future of Your CX" 
+            subtitle="Ready to transform your post-sales organization into a high-ROI growth engine?"
+            centered
+          />
+          <div className="glass-card p-12 rounded-3xl border-primary/20 mt-8">
+            <h3 className="text-2xl font-bold text-white mb-6">Book a Free Strategy Consultation</h3>
+            <p className="text-slate-400 mb-10 text-lg max-w-2xl mx-auto">
+              Schedule a 30-minute deep dive to discuss your current challenges, scaling goals, and how a fractional leader can drive immediate impact.
+            </p>
+            <a 
+              href="https://calendar.app.google/xZGzrqrAT6J6fuKy8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-primary-foreground font-bold rounded-xl shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all text-xl"
+            >
+              <Users className="w-6 h-6" />
+              Book 30-Min Consultation
+              <ArrowRight className="w-6 h-6" />
+            </a>
+            <p className="mt-8 text-sm text-slate-500">
+              Prefer email? Reach out at <a href="mailto:austin.s.gardner@gmail.com" className="text-primary hover:underline">austin.s.gardner@gmail.com</a>
+            </p>
           </div>
         </div>
       </Section>
