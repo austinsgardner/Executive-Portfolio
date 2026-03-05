@@ -259,7 +259,7 @@ export default function Home() {
                 I specialize in moving CX from "gut feel" to predictive data, automating post-sales machines that drive retention, expansion, and high ROI.
               </p>
               
-              <div className="grid grid-cols-1 gap-4 mb-12">
+              <div className="grid grid-cols-1 gap-4">
                 {[
                   "Scaled Support teams from 5 to 50+ members",
                   "Implemented AI-driven automation reducing response times by 40%",
@@ -270,23 +270,6 @@ export default function Home() {
                       <CheckCircle2 className="w-4 h-4 text-green-500" />
                     </div>
                     <span className="text-slate-300">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Fractional Value Cards */}
-              <div className="grid grid-cols-1 gap-4">
-                {[
-                  { title: "Churn Prevention", desc: "Flag risk 60-90 days before renewal with data-driven visibility.", icon: <BarChart3 className="text-red-400" /> },
-                  { title: "Scalable Onboarding", desc: "Cut time-to-value by 45%+ with structured implementation frameworks.", icon: <Zap className="text-orange-400" /> },
-                  { title: "Revenue Engine", desc: "Transform CS into growth with models that drove 112% NRR.", icon: <Rocket className="text-blue-400" /> }
-                ].map((item, i) => (
-                  <div key={i} className="bg-slate-800/50 p-4 rounded-xl border border-white/5 flex gap-4">
-                    <div className="p-2 bg-white/5 rounded h-fit">{item.icon}</div>
-                    <div>
-                      <h4 className="font-bold text-white">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
-                    </div>
                   </div>
                 ))}
               </div>
