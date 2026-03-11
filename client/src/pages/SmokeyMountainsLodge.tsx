@@ -5,6 +5,7 @@ import { ArrowRight, ArrowLeft, Zap, RefreshCw, BarChart3, Search } from "lucide
 import { Link } from "wouter";
 import logoPath from "@assets/Smoky_mountains_lodge_logo_-_circle_1773255012438.png";
 import automationImagePath from "@assets/n8n_automation_1773254968583.jpeg";
+import workflowDiagramPath from "@assets/n8n_workflow_automation_1773255479676.png";
 
 const PIPELINE_STEPS = [
   {
@@ -183,6 +184,25 @@ export default function SmokeyMountainsLodge() {
               </motion.div>
             ))}
           </div>
+        </section>
+
+        {/* Full-width Workflow Diagram */}
+        <section className="container px-4 md:px-6 max-w-6xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <img
+              src={workflowDiagramPath}
+              alt="n8n Event Horizon workflow automation diagram"
+              className="w-full rounded-2xl border border-white/10 shadow-2xl bg-white"
+            />
+            <p className="text-xs text-slate-500 mt-3 text-center">
+              The complete "Event Horizon" n8n workflow — from Schedule Trigger to WordPress publish and Gmail notification
+            </p>
+          </motion.div>
         </section>
 
         {/* CX & Revenue Impact */}
