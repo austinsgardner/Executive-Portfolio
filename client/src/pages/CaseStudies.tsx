@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BarChart3, Zap, Target, Users } from "lucide-react";
+import { Link } from "wouter";
+import logoPath from "@assets/Smoky_mountains_lodge_logo_-_circle_1773255012438.png";
+import automationImagePath from "@assets/n8n_automation_1773254968583.jpeg";
 
 const CASE_STUDIES = [
   {
@@ -72,7 +75,75 @@ export default function CaseStudies() {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-12 mt-16 max-w-5xl mx-auto">
+          {/* Featured: Smoky Mountains Lodge */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 max-w-5xl mx-auto mb-6"
+          >
+            <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4">Featured Case Study</p>
+            <Link href="/case-studies/smoky-mountains-lodge">
+              <div className="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 cursor-pointer group">
+                <div className="grid md:grid-cols-2">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={automationImagePath}
+                      alt="Smoky Mountains Lodge n8n automation"
+                      className="w-full h-full object-cover min-h-[260px] group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/60 md:block hidden" />
+                  </div>
+                  <div className="p-8 md:p-12 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <img src={logoPath} alt="Smoky Mountains Lodge" className="w-14 h-14 rounded-full border border-white/10" />
+                        <div>
+                          <p className="text-xs text-slate-500 uppercase tracking-widest">Client</p>
+                          <p className="font-bold text-white">Smoky Mountains Lodge</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {["AI Automation", "Programmatic SEO", "Revenue Ops"].map(tag => (
+                          <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border border-primary/20 text-xs">{tag}</Badge>
+                        ))}
+                      </div>
+                      <h2 className="text-xl md:text-2xl font-bold text-white mb-4 leading-snug group-hover:text-primary transition-colors">
+                        Automating Intent: How an AI-Powered SEO Flywheel Drives a Forecasted 30% Increase in Direct Bookings
+                      </h2>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        A fully autonomous content pipeline using n8n, Apify, and Google Gemini that intercepts travelers at the top of the funnel — capturing them before they ever open an OTA app.
+                      </p>
+                    </div>
+                    <div className="mt-8">
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        {[
+                          { value: "+30%", label: "Direct Bookings" },
+                          { value: "100%", label: "Automated Pipeline" }
+                        ].map(m => (
+                          <div key={m.label} className="bg-white/5 rounded-xl p-4 border border-white/5">
+                            <p className="text-2xl font-bold text-primary">{m.value}</p>
+                            <p className="text-xs text-slate-400 uppercase tracking-wider">{m.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
+                        Read the Full Case Study
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Executive Case Studies */}
+          <div className="max-w-5xl mx-auto mb-8 mt-16">
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Executive Leadership Case Studies</p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-12 mt-4 max-w-5xl mx-auto">
             {CASE_STUDIES.map((study, i) => (
               <motion.div
                 key={study.title}
