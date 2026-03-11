@@ -7,6 +7,7 @@ import CaseStudies from "@/pages/CaseStudies";
 import CustomerIntelligence from "@/pages/CustomerIntelligence";
 import Onboarding from "@/pages/Onboarding";
 import CXStrategy from "@/pages/CXStrategy";
+import SmokeyMountainsLodge from "@/pages/SmokeyMountainsLodge";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/case-studies" component={CaseStudies} />
+      <Route path="/case-studies/smoky-mountains-lodge" component={SmokeyMountainsLodge} />
       <Route path="/services/customer-intelligence" component={CustomerIntelligence} />
       <Route path="/services/onboarding" component={Onboarding} />
       <Route path="/services/cx-strategy" component={CXStrategy} />
