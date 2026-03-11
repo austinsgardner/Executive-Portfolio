@@ -1,0 +1,101 @@
+Case Study: AskAgent — Building a RAG-Based LLM Support Tool from Zero to 90% Ticket Deflection
+Company Context
+Higharc is a Series B–C PropTech platform that automates residential home design and construction documentation for production homebuilders. The platform is highly technical — builders use it to generate architectural plans, configure home models, and manage construction data across complex workflows.
+As Head of Customer Experience, I led a 60-person global organization spanning Implementation, Customer Success, Training, Support, and Professional Services. Our customer base consisted of enterprise homebuilders averaging $350K+ ARR, running multi-year implementations with steep learning curves.
+The problem was clear: Our support and training teams were drowning in repetitive, process-oriented questions — "How do I configure a roof in Studio?" or "What's the workflow for setting up a new community?" — while our subject matter experts were pulled into firefighting instead of scaling enablement. We needed a way to capture institutional knowledge and make it instantly accessible, without adding headcount linearly.
+
+The Challenge
+Higharc's platform was evolving rapidly. New features shipped monthly. Training content couldn't keep pace with product releases, and tribal knowledge lived in the heads of a handful of senior implementation specialists. The downstream effects:
+
+Support ticket volume was climbing as the customer base grew, with a significant percentage of tickets being procedural "how-to" questions
+Training resources were bottlenecked — we had limited SMEs and high demand for both live and async enablement
+Time-to-value suffered because customers waited on human answers to questions that should have been self-serve
+Internal team productivity eroded as experienced staff spent cycles answering the same questions repeatedly
+
+I needed a solution that could absorb our domain expertise, serve it back accurately in real-time, and scale without burning out the team.
+
+The Solution: AskAgent
+I designed and led the development of AskAgent, a custom RAG-based (Retrieval-Augmented Generation) LLM chatbot built on Replit, purpose-built to serve as Higharc's AI-powered support and enablement engine.
+Phase 1: Knowledge Capture & Architecture
+We built the application in Replit as a full-stack web app with a knowledge management backend and a multi-model chat interface. The core architecture:
+
+Knowledge Block System: A structured submission interface where team members could input discrete units of domain knowledge — step-by-step task instructions, workflow explanations, configuration guides, and troubleshooting procedures. Each block was tagged by product area, complexity level, and use case.
+Transcription Engine: We integrated a transcription pipeline directly into Replit to convert our library of recorded training sessions (125+ sessions, 500+ learners over the program's life) into searchable, structured text. This was critical — years of accumulated expertise lived in video recordings that were effectively inaccessible for RAG retrieval until we transcribed and chunked them.
+PDF Upload & Processing: The system accepted bulk PDF uploads of existing documentation, SOPs, and guides, parsing them into knowledge blocks automatically.
+Multi-Model Chat Interface: The chatbot integrated 8 selectable LLM models across Claude, OpenAI, and Gemini families. This wasn't vanity — it was strategic. Model performance varied dramatically depending on the task.
+
+Phase 2: Content Sprint — 1,000 Knowledge Blocks in 90 Days
+We set an aggressive target: 1,000 knowledge blocks submitted in three months. This wasn't a side project — it was a department-wide initiative. I embedded it into team OKRs and made knowledge block contribution a trackable KPI on our department dashboard.
+The content came from three sources:
+
+Training transcriptions — Our existing library of recorded sessions, transcribed and decomposed into discrete instructional blocks
+Manual expert submissions — Implementation specialists, trainers, and support engineers submitted step-by-step procedures and configuration guides one by one
+PDF documentation — Existing SOPs, product guides, and process docs uploaded and parsed into the knowledge base
+
+We tracked knowledge block volume as a department-level health metric, with a target of 30%+ quarter-over-quarter growth (starting baseline: 695 blocks at the beginning of Q3 2025, targeting 800).
+Phase 3: Validation Hackathon
+Once we had our initial knowledge base populated, I organized a structured hackathon with 16 users from across my Implementation and Training organization. The hackathon had a specific, methodical purpose:
+The Protocol:
+
+Each participant was assigned a set of realistic customer questions and support scenarios
+They prompted AskAgent and evaluated the responses against known-correct answers
+Every response was scored: Accurate, Partially Accurate, or Inaccurate/Insufficient
+Inaccurate results were flagged with specific notes on what went wrong — missing context, wrong steps, hallucinated information, outdated procedures
+Flagged items were routed back to knowledge block owners for immediate refinement
+
+This wasn't just QA — it was a human-in-the-loop training cycle. The hackathon surfaced systemic gaps we couldn't have found through random testing.
+Phase 4: Model Selection & Cost Optimization
+With 8 models available, we ran continuous evaluation across three dimensions:
+
+Output quality: Accuracy, completeness, and coherence of responses
+Processing capability: Ability to handle large context windows (training transcripts, multi-page SOPs)
+Cost efficiency: Token costs at scale
+
+Key finding: Gemini's models consistently outperformed on large text document processing and information synthesis — critical for our use case where knowledge blocks often referenced lengthy training transcriptions and multi-step procedures. We used this insight to set intelligent defaults while keeping model switching available for edge cases.
+The model landscape shifted constantly. What worked best in month one wasn't necessarily optimal in month three as providers released updates. We built the multi-model architecture specifically to stay agile rather than locked into a single vendor.
+Phase 5: The Additive vs. Subtractive Training Breakthrough
+The most significant learning — and one that fundamentally shaped our approach — was discovering that training a RAG-based LLM requires both additive and subtractive methods.
+The Additive Approach (what most teams default to):
+
+Adding more knowledge blocks to fill gaps
+Expanding existing blocks with additional context and edge cases
+Uploading new documentation as it was created
+Transcribing additional training sessions
+
+The Subtractive Approach (the counterintuitive breakthrough):
+
+Deleting knowledge blocks that contained outdated, contradictory, or overly generic information
+Pruning specific steps within blocks that were causing the LLM to hallucinate or generate confidently wrong answers
+Removing redundant blocks where overlapping content created retrieval confusion — the model would pull from multiple similar-but-not-identical sources and synthesize an inaccurate hybrid response
+Stripping irrelevant context that diluted the signal-to-noise ratio in retrieval
+
+This was the hardest lesson. The instinct is always to add more data. But we found that a curated, precise knowledge base dramatically outperformed a bloated one. When the LLM hallucinated, the fix was often removing the content that was leading it astray, not adding more content to overpower it.
+We documented this as an internal framework: "Additive fills gaps. Subtractive fixes hallucinations." The team learned to diagnose whether a bad response was caused by missing information (add) or conflicting/noisy information (subtract).
+
+Results
+MetricOutcomeTicket Deflection90% of routine support queries resolved by AskAgent without human interventionKnowledge Base Scale695+ knowledge blocks (and growing 30%+ QoQ), sourced from transcriptions, manual input, and PDF processingHackathon Validation16-person structured QA session identified and resolved systemic accuracy gapsModel Optimization8-model architecture enabled continuous cost/quality optimization as the LLM landscape evolvedTeam ProductivityImplementation and Training specialists redirected from answering repetitive questions to high-value customer engagementTime-to-ValueCustomers gained instant access to accurate, self-serve answers — contributing to the broader 45% reduction in time-to-valueDepartment GoalAskAgent knowledge block volume and usage rate became a tracked KPI with ≥30% growth targets
+
+Key Learnings
+
+Treat knowledge curation like product management. Knowledge blocks aren't static documentation — they're a living product that requires roadmapping, QA, iteration, and deprecation. We tracked them as a department KPI, not a nice-to-have.
+Subtractive training is as important as additive. The instinct to "just add more data" can actually degrade LLM performance. Contradictory, redundant, or outdated content causes hallucinations. Pruning is a discipline, not a failure.
+Multi-model architecture is a strategic advantage, not a luxury. LLM capabilities and pricing shift constantly. Being model-agnostic meant we could optimize for quality and cost simultaneously without rebuilding infrastructure.
+Hackathons are structured QA, not team-building exercises. Our 16-person validation sprint wasn't about morale — it was a systematic human-in-the-loop evaluation that surfaced patterns no automated testing would catch.
+Transcription is an underrated knowledge unlock. Years of institutional expertise was trapped in video recordings. Building a transcription pipeline into our knowledge ingestion workflow converted dead assets into high-value RAG content.
+Embed AI initiatives into existing OKRs. AskAgent succeeded because knowledge block contribution was a tracked team metric, not a voluntary side project. Adoption follows accountability.
+
+
+Technical Stack
+
+Platform: Replit (full-stack web application)
+LLM Integration: 8 selectable models across OpenAI, Claude (Anthropic), and Google Gemini
+Knowledge Architecture: Custom knowledge block system with tagging, versioning, and contributor tracking
+Content Ingestion: Transcription engine (audio/video → structured text), PDF parser, manual submission interface
+Retrieval: RAG (Retrieval-Augmented Generation) with vector search across knowledge blocks
+Monitoring: Dashboard tracking knowledge block volume, usage rates, and response quality metrics
+
+
+Why This Matters
+AskAgent wasn't a science project. It was a direct response to the core scaling challenge every CX organization faces: How do you maintain quality and speed as your customer base grows without hiring linearly?
+The answer is to systematize institutional knowledge into an AI-powered layer that handles the 90% of questions that are procedural, while freeing your experts to focus on the 10% that require judgment, relationship, and strategic thinking.
+This project demonstrated that a non-engineering CX leader can architect, build, and deploy production-grade AI tooling that delivers measurable business outcomes — 90% ticket deflection, faster time-to-value, and a scalable knowledge infrastructure that compounds over time.

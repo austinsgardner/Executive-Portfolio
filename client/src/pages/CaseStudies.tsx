@@ -7,6 +7,8 @@ import { ArrowRight, BarChart3, Zap, Target, Users } from "lucide-react";
 import { Link } from "wouter";
 import logoPath from "@assets/Smoky_mountains_lodge_logo_-_circle_1773255012438.png";
 import automationImagePath from "@assets/n8n_automation_1773254968583.jpeg";
+import higharc_logo from "@assets/higharc_logo_1773258084228.png";
+import askAgentGif from "@assets/AskAgent_demo_1773258084228.gif";
 
 const CASE_STUDIES = [
   {
@@ -132,6 +134,68 @@ export default function CaseStudies() {
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* AskAgent Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto mb-6 mt-8"
+          >
+            <Link href="/case-studies/ask-agent">
+              <div className="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 cursor-pointer group">
+                <div className="grid md:grid-cols-2">
+                  <div className="p-8 md:p-12 flex flex-col justify-between order-2 md:order-1">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <img src={higharc_logo} alt="Higharc" className="h-8 bg-white rounded-md px-2 py-1" />
+                        <div>
+                          <p className="text-xs text-slate-500 uppercase tracking-widest">Company</p>
+                          <p className="font-bold text-white">Higharc · Series B–C</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {["RAG / LLM", "AI Tooling", "Support Automation"].map(tag => (
+                          <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border border-primary/20 text-xs">{tag}</Badge>
+                        ))}
+                      </div>
+                      <h2 className="text-xl md:text-2xl font-bold text-white mb-4 leading-snug group-hover:text-primary transition-colors">
+                        AskAgent — Building a RAG-Based LLM Support Tool from Zero to 90% Ticket Deflection
+                      </h2>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        A custom AI-powered knowledge engine built on Replit that absorbed institutional expertise from 125+ training sessions and deflected 90% of support queries without human intervention.
+                      </p>
+                    </div>
+                    <div className="mt-8">
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        {[
+                          { value: "90%", label: "Ticket Deflection" },
+                          { value: "695+", label: "Knowledge Blocks" }
+                        ].map(m => (
+                          <div key={m.label} className="bg-white/5 rounded-xl p-4 border border-white/5">
+                            <p className="text-2xl font-bold text-primary">{m.value}</p>
+                            <p className="text-xs text-slate-400 uppercase tracking-wider">{m.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
+                        Read the Full Case Study
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="relative overflow-hidden order-1 md:order-2">
+                    <img
+                      src={askAgentGif}
+                      alt="AskAgent demo"
+                      className="w-full h-full object-cover min-h-[260px] group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background/60 md:block hidden" />
                   </div>
                 </div>
               </div>
