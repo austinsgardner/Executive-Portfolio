@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Experience", href: "#experience" },
   { label: "Frameworks", href: "#frameworks" },
   { label: "Skills", href: "#skills" },
@@ -27,6 +28,13 @@ export function Navigation() {
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
+    
+    // If it's an external link or a full internal route (like /case-studies)
+    if (id.startsWith("http") || id.startsWith("/")) {
+      window.location.href = id;
+      return;
+    }
+
     if (location !== "/") {
       window.location.href = `/${id}`;
       return;
@@ -61,16 +69,12 @@ export function Navigation() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
-            item.href.startsWith("http") ? (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-muted-foreground hover:text-white transition-colors"
-              >
-                {item.label}
-              </a>
+            item.href.startsWith("http") || item.href.startsWith("/") ? (
+              <Link key={item.label} href={item.href}>
+                <a className="text-sm font-medium text-muted-foreground hover:text-white transition-colors">
+                  {item.label}
+                </a>
+              </Link>
             ) : (
               <button
                 key={item.label}
@@ -111,16 +115,12 @@ export function Navigation() {
           >
             <div className="flex flex-col p-4 gap-4">
               {NAV_ITEMS.map((item) => (
-                item.href.startsWith("http") ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-left py-2 text-lg font-medium text-muted-foreground hover:text-white"
-                  >
-                    {item.label}
-                  </a>
+                item.href.startsWith("http") || item.href.startsWith("/") ? (
+                  <Link key={item.label} href={item.href}>
+                    <a className="text-left py-2 text-lg font-medium text-muted-foreground hover:text-white">
+                      {item.label}
+                    </a>
+                  </Link>
                 ) : (
                   <button
                     key={item.label}
