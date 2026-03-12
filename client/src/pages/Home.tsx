@@ -249,19 +249,35 @@ export default function Home() {
               Trusted by leaders at…
             </p>
             <div className="relative overflow-hidden">
-              {/* fade edges */}
               <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-              <div className="flex animate-marquee">
-                {[logoAutomattic, logoConga, logoHigharc, logoNike, logoRedHat, logoSamsung, logoShopmonkey, logoSyncari, logoWordpress,
-                  logoAutomattic, logoConga, logoHigharc, logoNike, logoRedHat, logoSamsung, logoShopmonkey, logoSyncari, logoWordpress
-                ].map((src, i) => (
-                  <div key={i} className="flex-shrink-0 flex items-center justify-center mx-8">
+              <div className="flex w-max animate-marquee">
+                {[
+                  { src: logoAutomattic, maxW: 100 },
+                  { src: logoConga, maxW: 70 },
+                  { src: logoHigharc, maxW: 100 },
+                  { src: logoNike, maxW: 48 },
+                  { src: logoRedHat, maxW: 100 },
+                  { src: logoSamsung, maxW: 100 },
+                  { src: logoShopmonkey, maxW: 110 },
+                  { src: logoSyncari, maxW: 80 },
+                  { src: logoWordpress, maxW: 110 },
+                  { src: logoAutomattic, maxW: 100 },
+                  { src: logoConga, maxW: 70 },
+                  { src: logoHigharc, maxW: 100 },
+                  { src: logoNike, maxW: 48 },
+                  { src: logoRedHat, maxW: 100 },
+                  { src: logoSamsung, maxW: 100 },
+                  { src: logoShopmonkey, maxW: 110 },
+                  { src: logoSyncari, maxW: 80 },
+                  { src: logoWordpress, maxW: 110 },
+                ].map(({ src, maxW }, i) => (
+                  <div key={i} className="flex-shrink-0 flex items-center justify-center mx-10">
                     <img
                       src={src}
                       alt=""
-                      className="h-7 w-auto object-contain opacity-40 hover:opacity-70 transition-opacity"
-                      style={{ filter: "brightness(0) invert(1)" }}
+                      className="h-6 object-contain opacity-40 hover:opacity-70 transition-opacity"
+                      style={{ filter: "brightness(0) invert(1)", maxWidth: `${maxW}px`, width: "100%" }}
                     />
                   </div>
                 ))}
