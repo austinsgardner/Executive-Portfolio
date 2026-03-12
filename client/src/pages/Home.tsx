@@ -524,18 +524,25 @@ export default function Home() {
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-1">The Strategic Advisor</h3>
-                <p className="text-primary font-medium">"The Sounding Board"</p>
+                <p className="text-primary font-medium">"The Executive Navigator"</p>
               </div>
-              <div className="text-3xl font-bold text-white mb-6">$3,500 <span className="text-sm text-slate-400 font-normal">/ month</span></div>
-              <p className="text-slate-400 text-sm mb-6">For founders who have a team but need an executive navigator.</p>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {["2x Monthly Strategy Calls", "Async Slack/Email support", "Hiring & Org Design review", "Quarterly Roadmap Audit"].map((f, i) => (
+              <div className="text-3xl font-bold text-white mb-6">$4,000 <span className="text-sm text-slate-400 font-normal">/ month</span></div>
+              <p className="text-slate-400 text-sm mb-6">For founders who have a CS team but need senior-level strategic direction without a full-time hire.</p>
+              <ul className="space-y-4 mb-4 flex-grow">
+                {[
+                  "NRR & Churn Strategy Sessions (2x/month)",
+                  "Async Slack/Email Advisory",
+                  "Org Design & Hiring Roadmap",
+                  "Quarterly CX Roadmap Audit",
+                  "Board-Ready CX Metrics Framework",
+                ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
                     <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}
               </ul>
+              <p className="text-sm italic text-slate-400 mb-8">Typical outcomes: Reduced executive firefighting, clear CS hiring plan, data-driven retention strategy.</p>
               <a href="https://calendar.app.google/xZGzrqrAT6J6fuKy8" target="_blank" className="w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-bold text-center hover:bg-slate-700 transition-colors">Book Strategic Audit</a>
             </motion.div>
 
@@ -553,15 +560,24 @@ export default function Home() {
                 <p className="text-primary font-medium">"Embedded Leadership"</p>
               </div>
               <div className="text-3xl font-bold text-white mb-6">Starting at $9,000 <span className="text-sm text-slate-400 font-normal">/ month</span></div>
-              <p className="text-slate-400 text-sm mb-6">I act as an embedded executive 1 day per week to drive scale.</p>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {["Churn & NRR Ownership", "Full Playbook Architecture", "Team Leadership & Coaching", "AI-Ops Systems Implementation", "Board Deck CX Contribution"].map((f, i) => (
+              <p className="text-slate-400 text-sm mb-6">Embedded executive leadership — typically 8–10 hrs/week of strategic ownership, async availability, and hands-on CX team guidance.</p>
+              <ul className="space-y-4 mb-4 flex-grow">
+                {[
+                  "Board & Executive CX Reporting",
+                  "Churn & NRR Ownership",
+                  "Full Playbook Architecture (Onboarding → Renewal → Expansion)",
+                  "Team Leadership & Coaching",
+                  "AI-Ops Systems Implementation",
+                  "Customer Health Scoring & Dashboards",
+                ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
                     <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}
               </ul>
+              <p className="text-sm italic text-slate-400 mb-2">Typical outcomes: 5–15% NRR improvement, 30–50% faster time-to-value, first CS hire made within 90 days.</p>
+              <p className="text-xs text-slate-500 mb-8">90-day initial engagement, month-to-month thereafter.</p>
               <a href="https://calendar.app.google/xZGzrqrAT6J6fuKy8" target="_blank" className="w-full py-3 px-4 rounded-xl bg-primary text-primary-foreground font-bold text-center hover:bg-primary/90 transition-colors">Book Strategic Audit</a>
             </motion.div>
 
@@ -574,20 +590,28 @@ export default function Home() {
               className="glass-card p-8 rounded-3xl relative flex flex-col group hover:border-primary/50 transition-all hover:-translate-y-1"
             >
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-1">CX + AI Ops Sprint</h3>
-                <p className="text-primary font-medium">"The Infrastructure Build"</p>
+                <h3 className="text-2xl font-bold text-white mb-1">CX Infrastructure Sprint</h3>
+                <p className="text-primary font-medium">"The Accelerated Build"</p>
               </div>
               <div className="text-3xl font-bold text-white mb-6">Starting at $20,000 <span className="text-sm text-slate-400 font-normal">(6-Week Sprint)</span></div>
-              <p className="text-slate-400 text-sm mb-6">For startups needing immediate automation build-out.</p>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {["End-to-end n8n Automation Build", "Automated Onboarding Flows", "Customer Health Score Setup", "Tech-Stack Consolidation", "Team Training"].map((f, i) => (
+              <p className="text-slate-400 text-sm mb-6">A focused engagement to design and build your CX operating system from scratch — playbooks, automation, dashboards, and team enablement delivered in 6 weeks.</p>
+              <ul className="space-y-4 mb-4 flex-grow">
+                {[
+                  "Full CX Playbook & Journey Map Delivery",
+                  "AI-Powered Support Automation (n8n, LLM-based deflection)",
+                  "Customer Health Score & Dashboard Build",
+                  "Onboarding & Renewal Process Design",
+                  "Tech-Stack Audit & Consolidation",
+                  "Team Training & Enablement",
+                ].map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
                     <Zap className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <a href="https://calendar.app.google/xZGzrqrAT6J6fuKy8" target="_blank" className="w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-bold text-center hover:bg-slate-700 transition-colors">Book Strategic Audit</a>
+              <p className="text-sm italic text-slate-400 mb-8">You walk away with: A complete, documented CX operating system your team can execute on day one.</p>
+              <a href="https://calendar.app.google/xZGzrqrAT6J6fuKy8" target="_blank" className="w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-bold text-center hover:bg-slate-700 transition-colors">Book a Sprint Scoping Call</a>
             </motion.div>
           </div>
         </div>
