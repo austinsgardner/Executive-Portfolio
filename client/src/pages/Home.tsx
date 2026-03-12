@@ -25,7 +25,12 @@ import {
   CheckCircle2, 
   Building2,
   Rocket,
-  Send
+  Send,
+  Layers,
+  Database,
+  Cpu,
+  TrendingUp,
+  Brain,
 } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -634,10 +639,28 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-8">Industry Specialization</h2>
           <div className="flex flex-wrap justify-center gap-4">
-            {["Vertical SaaS", "PropTech", "Data Platforms", "B2B Tech", "FinTech"].map((spec) => (
-              <span key={spec} className="px-8 py-3 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-300 font-semibold backdrop-blur-sm">
-                {spec}
-              </span>
+            {[
+              { name: "Vertical SaaS", Icon: Layers, iconAnim: { rotate: [0, 360] } },
+              { name: "PropTech", Icon: Building2, iconAnim: { y: [0, -8, 0, -4, 0] } },
+              { name: "Data Platforms", Icon: Database, iconAnim: { scale: [1, 1.3, 0.9, 1.2, 1] } },
+              { name: "B2B Tech", Icon: Cpu, iconAnim: { rotate: [0, -12, 12, -12, 12, 0] } },
+              { name: "FinTech", Icon: TrendingUp, iconAnim: { x: [0, 5, 0], y: [0, -5, 0] } },
+              { name: "Artificial Intelligence", Icon: Brain, iconAnim: { scale: [1, 1.25, 1, 1.25, 1] } },
+            ].map(({ name, Icon, iconAnim }) => (
+              <motion.div
+                key={name}
+                whileHover="hovered"
+                className="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-300 font-semibold backdrop-blur-sm hover:border-primary/50 hover:text-white transition-colors cursor-default"
+              >
+                <motion.span
+                  variants={{ hovered: iconAnim }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="text-primary"
+                >
+                  <Icon className="w-4 h-4" />
+                </motion.span>
+                {name}
+              </motion.div>
             ))}
           </div>
         </div>
