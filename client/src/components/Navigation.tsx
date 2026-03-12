@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { label: "Career", href: "#experience" },
   { label: "Engagement", href: "#engagement" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Chatbot", href: "https://bit.ly/4bsidlm" },
+  { label: "Ask Austin AI", href: "https://gemini.google.com/gem/1gTpBiVNyXDzbPVl6Q1TlREIufe6ToH1d?usp=sharing" },
   { label: "Contact", href: "#contact" },
 ];
 
