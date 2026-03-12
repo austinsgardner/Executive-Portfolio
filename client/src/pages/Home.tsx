@@ -526,7 +526,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-white mb-1">CX + AI Ops Sprint</h3>
                 <p className="text-primary font-medium">"The Infrastructure Build"</p>
               </div>
-              <div className="text-3xl font-bold text-white mb-6">$20,000 <span className="text-sm text-slate-400 font-normal">(6-Week Sprint)</span></div>
+              <div className="text-3xl font-bold text-white mb-6">Starting at $20,000 <span className="text-sm text-slate-400 font-normal">(6-Week Sprint)</span></div>
               <p className="text-slate-400 text-sm mb-6">For startups needing immediate automation build-out.</p>
               <ul className="space-y-4 mb-8 flex-grow">
                 {["End-to-end n8n Automation Build", "Automated Onboarding Flows", "Customer Health Score Setup", "Tech-Stack Consolidation", "Team Training"].map((f, i) => (
