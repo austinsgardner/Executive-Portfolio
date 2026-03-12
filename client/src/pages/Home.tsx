@@ -1,4 +1,13 @@
 import headshotPath from "@/assets/images/headshot.jpg";
+import logoAutomattic from "@assets/automattic_logo_1773346793194.png";
+import logoConga from "@assets/conga_logo_1773346793194.png";
+import logoHigharc from "@assets/higharc_logo_1773346793194.png";
+import logoNike from "@assets/nike_logo_1773346793194.png";
+import logoRedHat from "@assets/Red_Hat-Logo_1773346793194.png";
+import logoSamsung from "@assets/samsung_logo_1773346793195.png";
+import logoShopmonkey from "@assets/Shopmonkey_1773346793195.png";
+import logoSyncari from "@assets/syncari_logo_1773346793195.png";
+import logoWordpress from "@assets/Wordpress_logo_1773346793195.png";
 import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
@@ -231,6 +240,32 @@ export default function Home() {
               <MetricsCard value="<1%" label="Churn Rate" delay={0.3} />
               <MetricsCard value="$100M+" label="Revenue Managed" delay={0.4} />
               <MetricsCard value="60+" label="Team Size" delay={0.5} />
+            </div>
+          </div>
+
+          {/* Logo Marquee */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <p className="text-center text-xs font-semibold text-slate-500 uppercase tracking-widest mb-6">
+              Trusted by leaders at…
+            </p>
+            <div className="relative overflow-hidden">
+              {/* fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+              <div className="flex animate-marquee">
+                {[logoAutomattic, logoConga, logoHigharc, logoNike, logoRedHat, logoSamsung, logoShopmonkey, logoSyncari, logoWordpress,
+                  logoAutomattic, logoConga, logoHigharc, logoNike, logoRedHat, logoSamsung, logoShopmonkey, logoSyncari, logoWordpress
+                ].map((src, i) => (
+                  <div key={i} className="flex-shrink-0 flex items-center justify-center mx-8">
+                    <img
+                      src={src}
+                      alt=""
+                      className="h-7 w-auto object-contain opacity-40 hover:opacity-70 transition-opacity"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
