@@ -13,6 +13,7 @@ import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { SiLinkedin } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { 
@@ -694,6 +695,17 @@ export default function Home() {
       </Section>
 
       <footer className="py-8 border-t border-white/5 text-center text-slate-500 text-sm">
+        <div className="flex items-center justify-center gap-4 mb-3">
+          <a
+            href="https://www.linkedin.com/in/austinsgardner/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-[#0A66C2] transition-colors"
+          >
+            <SiLinkedin className="w-5 h-5" />
+            <span>LinkedIn</span>
+          </a>
+        </div>
         <p>© {new Date().getFullYear()} Austin Gardner. All rights reserved.</p>
       </footer>
     </div>
