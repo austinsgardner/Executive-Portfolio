@@ -5,12 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Consulting Value", href: "#about" },
+  { label: "CX Architecture", href: "#services" },
+  { label: "Career", href: "#experience" },
+  { label: "Engagement", href: "#engagement" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "Experience", href: "#experience" },
-  { label: "Frameworks", href: "#frameworks" },
-  { label: "Skills", href: "#skills" },
   { label: "Chatbot", href: "https://bit.ly/4bsidlm" },
   { label: "Contact", href: "#contact" },
 ];
