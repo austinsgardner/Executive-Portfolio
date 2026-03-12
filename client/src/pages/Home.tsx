@@ -213,13 +213,13 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </button>
               <a 
-                href="https://bit.ly/4bsidlm"
+                href="https://gemini.google.com/gem/1gTpBiVNyXDzbPVl6Q1TlREIufe6ToH1d?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-blue-600/20 text-blue-400 font-semibold rounded-xl border border-blue-500/30 hover:bg-blue-600/30 hover:border-blue-500/50 transition-all text-base backdrop-blur-sm flex items-center gap-2"
               >
                 <Zap className="w-5 h-5" />
-                Career Chatbot
+                Ask Austin AI
               </a>
             </div>
           </motion.div>
