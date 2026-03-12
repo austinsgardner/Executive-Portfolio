@@ -304,7 +304,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                With over 20 years of experience building revenue-driving Customer Experience organizations, I now partner with startups and scale-ups as a fractional leader.
+                With nearly 20 years of experience building revenue-driving Customer Experience organizations, I now partner with startups and scale-ups as a fractional leader.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 I specialize in moving CX from "gut feel" to predictive data, automating post-sales machines that drive retention, expansion, and high ROI.
