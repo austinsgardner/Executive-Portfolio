@@ -250,7 +250,7 @@ export default function Home() {
           </div>
 
           {/* Logo Marquee */}
-          <div className="mt-12 max-w-5xl mx-auto">
+          <div className="mt-12 max-w-5xl mx-auto pb-[30px]">
             <p className="text-center text-xs font-semibold text-slate-500 uppercase tracking-widest mb-6">
               Trusted by leaders at…
             </p>
@@ -262,8 +262,8 @@ export default function Home() {
                   { src: logoAutomattic, maxW: 173 },
                   { src: logoConga, maxW: 81 },
                   { src: logoHigharc, maxW: 115 },
-                  { src: logoNike, maxW: 85 },
-                  { src: logoRedHat, maxW: 180 },
+                  { src: logoNike, maxW: 98 },
+                  { src: logoRedHat, maxW: 207 },
                   { src: logoSamsung, maxW: 115 },
                   { src: logoShopmonkey, maxW: 185 },
                   { src: logoSyncari, maxW: 92 },
@@ -271,8 +271,8 @@ export default function Home() {
                   { src: logoAutomattic, maxW: 173 },
                   { src: logoConga, maxW: 81 },
                   { src: logoHigharc, maxW: 115 },
-                  { src: logoNike, maxW: 85 },
-                  { src: logoRedHat, maxW: 180 },
+                  { src: logoNike, maxW: 98 },
+                  { src: logoRedHat, maxW: 207 },
                   { src: logoSamsung, maxW: 115 },
                   { src: logoShopmonkey, maxW: 185 },
                   { src: logoSyncari, maxW: 92 },
