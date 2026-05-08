@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart3, Zap, Target, Sparkles } from "lucide-react";
+import { ArrowRight, BarChart3, Zap, Target, Sparkles, Workflow } from "lucide-react";
 
 const CASE_STUDIES = [
   {
@@ -26,6 +26,25 @@ const CASE_STUDIES = [
     href: "/case-studies/cx-health-dashboard",
     featured: true,
     cta: "View live prototype",
+  },
+  {
+    title: "Smoky Mountains Lodge: AI-Powered SEO Flywheel",
+    company: "Smoky Mountains Lodge",
+    period: "2026 · Luxury Short-Term Rentals",
+    challenge:
+      "Short-term rental operator losing up to 15% of revenue to OTA platform fees, with no scalable way to capture high-intent travelers searching for local events before they ever opened Airbnb or VRBO.",
+    solution:
+      "Architected the 'Event Horizon' engine — a fully autonomous programmatic SEO pipeline using n8n, Apify, and Google Gemini. Weekly trigger scrapes high-traffic local events, AI filters and drafts an 800-word branded guide, then auto-publishes to WordPress with zero manual touch.",
+    results: [
+      "+30% Forecasted Direct Bookings",
+      "+30% Forecasted Organic Traffic",
+      "100% Automated Content Pipeline",
+      "-15% OTA Fee Dependency",
+    ],
+    icon: <Workflow className="w-6 h-6 text-blue-400" />,
+    tags: ["AI Automation", "Programmatic SEO", "Revenue Ops"],
+    href: "/case-studies/smoky-mountains-lodge",
+    cta: "Read the full case study",
   },
   {
     title: "Higharc: Scaling Global CX to 112% NRR",
