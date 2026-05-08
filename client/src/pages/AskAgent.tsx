@@ -159,7 +159,7 @@ export default function AskAgent() {
               <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">Company Context</p>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">The Scaling Problem</h2>
               <p className="text-slate-400 leading-relaxed mb-4">
-                Higharc is a Series B–C PropTech platform automating residential home design for production homebuilders. As Head of Customer Experience, I led a 60-person global organization spanning Implementation, Success, Training, Support, and Professional Services.
+                Higharc is a Series B PropTech platform automating residential home design for production homebuilders. As Head of Customer Experience, I led a 60-person global organization spanning Implementation, Success, Training, Support, and Professional Services.
               </p>
               <p className="text-slate-400 leading-relaxed mb-6">
                 Our customer base consisted of enterprise homebuilders averaging <span className="text-white font-semibold">$350K+ ARR</span> running multi-year implementations with steep learning curves.
