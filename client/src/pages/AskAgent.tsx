@@ -119,7 +119,7 @@ export default function AskAgent() {
                     </span>
                   ))}
                 </div>
-                <p className="text-slate-400 text-sm uppercase tracking-widest font-medium mb-2">Higharc · Series B–C · PropTech · Head of Customer Experience</p>
+                <p className="text-slate-400 text-sm uppercase tracking-widest font-medium mb-2">Higharc · Series B · PropTech · Head of Customer Experience</p>
                 <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                   AskAgent — Building a RAG-Based LLM Support Tool from Zero to{" "}
                   <span className="text-gradient">90% Ticket Deflection</span>

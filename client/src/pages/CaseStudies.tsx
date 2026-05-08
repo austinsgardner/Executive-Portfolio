@@ -49,7 +49,7 @@ const CASE_STUDIES = [
   {
     title: "AskAgent: 90% Ticket Deflection via RAG-Based LLM",
     company: "Higharc",
-    period: "2024 · AI Support Tooling",
+    period: "2025 · AI Support Tooling",
     challenge:
       "A high-velocity Series B–C platform was generating support tickets faster than human capacity could absorb. Institutional knowledge lived in 125+ recorded training sessions, scattered SOPs, and PDF documentation — none of it searchable, none of it deflecting load.",
     solution:
