@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "@/pages/Home";
 import CaseStudies from "@/pages/CaseStudies";
+import CXHealthDashboard from "@/pages/CXHealthDashboard";
 import CustomerIntelligence from "@/pages/CustomerIntelligence";
 import Onboarding from "@/pages/Onboarding";
 import CXStrategy from "@/pages/CXStrategy";
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/case-studies" component={CaseStudies} />
+      <Route path="/case-studies/cx-health-dashboard" component={CXHealthDashboard} />
       <Route path="/services/customer-intelligence" component={CustomerIntelligence} />
       <Route path="/services/onboarding" component={Onboarding} />
       <Route path="/services/cx-strategy" component={CXStrategy} />
