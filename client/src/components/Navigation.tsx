@@ -9,8 +9,6 @@ const NAV_ITEMS = [
   { label: "Services", href: "#services" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Experience", href: "#experience" },
-  { label: "Frameworks", href: "#frameworks" },
-  { label: "Skills", href: "#skills" },
   { label: "Chatbot", href: "https://bit.ly/4bsidlm" },
   { label: "Contact", href: "#contact" },
 ];
