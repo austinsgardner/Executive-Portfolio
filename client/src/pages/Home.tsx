@@ -31,7 +31,7 @@ import {
 // Logo strip — heightClass tuned per logo to visually normalize different aspect ratios.
 const TRUSTED_LOGOS = [
   { name: "Higharc", src: logoHigharc, heightClass: "h-7 md:h-8" },
-  { name: "Syncari", src: logoSyncari, heightClass: "h-7 md:h-8" },
+  { name: "Syncari", src: logoSyncari, heightClass: "h-3.5 md:h-4" },
   { name: "Shopmonkey", src: logoShopmonkey, heightClass: "h-7 md:h-8" },
   { name: "Conga", src: logoConga, heightClass: "h-6 md:h-7" },
   { name: "WordPress", src: logoWordpress, heightClass: "h-7 md:h-8" },
