@@ -32,13 +32,13 @@ import {
 const TRUSTED_LOGOS = [
   { name: "Higharc", src: logoHigharc, heightClass: "h-7 md:h-8" },
   { name: "Syncari", src: logoSyncari, heightClass: "h-3.5 md:h-4" },
-  { name: "Shopmonkey", src: logoShopmonkey, heightClass: "h-7 md:h-8" },
+  { name: "Automattic", src: logoAutomattic, heightClass: "h-6 md:h-7" },
+  { name: "Shopmonkey", src: logoShopmonkey, heightClass: "h-8 md:h-9" },
   { name: "Conga", src: logoConga, heightClass: "h-6 md:h-7" },
   { name: "WordPress", src: logoWordpress, heightClass: "h-7 md:h-8" },
-  { name: "Automattic", src: logoAutomattic, heightClass: "h-5 md:h-6" },
-  { name: "Samsung", src: logoSamsung, heightClass: "h-5 md:h-6" },
-  { name: "Red Hat", src: logoRedhat, heightClass: "h-9 md:h-10" },
-  { name: "Nike", src: logoNike, heightClass: "h-8 md:h-9" },
+  { name: "Samsung", src: logoSamsung, heightClass: "h-6 md:h-7" },
+  { name: "Red Hat", src: logoRedhat, heightClass: "h-10 md:h-11" },
+  { name: "Nike", src: logoNike, heightClass: "h-9 md:h-10" },
 ];
 
 const TESTIMONIALS = [
