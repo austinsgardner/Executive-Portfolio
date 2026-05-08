@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import CaseStudies from "@/pages/CaseStudies";
 import CXHealthDashboard from "@/pages/CXHealthDashboard";
 import SmokeyMountainsLodge from "@/pages/SmokeyMountainsLodge";
+import AskAgent from "@/pages/AskAgent";
 import CustomerIntelligence from "@/pages/CustomerIntelligence";
 import Onboarding from "@/pages/Onboarding";
 import CXStrategy from "@/pages/CXStrategy";
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/case-studies/cx-health-dashboard" component={CXHealthDashboard} />
       <Route path="/case-studies/smoky-mountains-lodge" component={SmokeyMountainsLodge} />
+      <Route path="/case-studies/ask-agent" component={AskAgent} />
       <Route path="/services/customer-intelligence" component={CustomerIntelligence} />
       <Route path="/services/onboarding" component={Onboarding} />
       <Route path="/services/cx-strategy" component={CXStrategy} />

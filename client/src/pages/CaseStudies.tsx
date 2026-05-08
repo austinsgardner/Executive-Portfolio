@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart3, Zap, Target, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BarChart3, Zap, Target, Sparkles, Workflow, Bot } from "lucide-react";
 
 const CASE_STUDIES = [
   {
@@ -44,6 +44,25 @@ const CASE_STUDIES = [
     icon: <Workflow className="w-6 h-6 text-blue-400" />,
     tags: ["AI Automation", "Programmatic SEO", "Revenue Ops"],
     href: "/case-studies/smoky-mountains-lodge",
+    cta: "Read the full case study",
+  },
+  {
+    title: "AskAgent: 90% Ticket Deflection via RAG-Based LLM",
+    company: "Higharc",
+    period: "2024 · AI Support Tooling",
+    challenge:
+      "A high-velocity Series B–C platform was generating support tickets faster than human capacity could absorb. Institutional knowledge lived in 125+ recorded training sessions, scattered SOPs, and PDF documentation — none of it searchable, none of it deflecting load.",
+    solution:
+      "Designed and shipped AskAgent, a custom RAG-based LLM support tool built on Replit. Captured expertise into 695+ tagged knowledge blocks, ran a 16-person validation hackathon, and architected a multi-model interface across 8 LLMs (Claude, OpenAI, Gemini) with cost-optimized intelligent defaults.",
+    results: [
+      "90% Ticket Deflection",
+      "695+ Knowledge Blocks Curated",
+      "125+ Training Sessions Transcribed",
+      "8-LLM Multi-Model Architecture",
+    ],
+    icon: <Bot className="w-6 h-6 text-emerald-400" />,
+    tags: ["RAG / LLM", "AI Tooling", "Support Automation"],
+    href: "/case-studies/ask-agent",
     cta: "Read the full case study",
   },
   {
