@@ -1,4 +1,13 @@
 import headshotPath from "@/assets/images/headshot.jpg";
+import logoWordpress from "@assets/logo_wordpress.png";
+import logoSyncari from "@assets/logo_syncari.png";
+import logoShopmonkey from "@assets/logo_shopmonkey.png";
+import logoSamsung from "@assets/logo_samsung.png";
+import logoRedhat from "@assets/logo_redhat.png";
+import logoNike from "@assets/logo_nike.png";
+import logoHigharc from "@assets/logo_higharc.png";
+import logoConga from "@assets/logo_conga.png";
+import logoAutomattic from "@assets/logo_automattic.png";
 import { Navigation } from "@/components/Navigation";
 import { Section, SectionHeader } from "@/components/Section";
 import { MetricsCard } from "@/components/MetricsCard";
@@ -18,6 +27,19 @@ import {
   Rocket,
   Send
 } from "lucide-react";
+
+// Logo strip — heightClass tuned per logo to visually normalize different aspect ratios.
+const TRUSTED_LOGOS = [
+  { name: "Higharc", src: logoHigharc, heightClass: "h-7 md:h-8" },
+  { name: "Syncari", src: logoSyncari, heightClass: "h-7 md:h-8" },
+  { name: "Shopmonkey", src: logoShopmonkey, heightClass: "h-7 md:h-8" },
+  { name: "Conga", src: logoConga, heightClass: "h-6 md:h-7" },
+  { name: "WordPress", src: logoWordpress, heightClass: "h-7 md:h-8" },
+  { name: "Automattic", src: logoAutomattic, heightClass: "h-5 md:h-6" },
+  { name: "Samsung", src: logoSamsung, heightClass: "h-5 md:h-6" },
+  { name: "Red Hat", src: logoRedhat, heightClass: "h-9 md:h-10" },
+  { name: "Nike", src: logoNike, heightClass: "h-8 md:h-9" },
+];
 
 const TESTIMONIALS = [
   {
@@ -233,6 +255,46 @@ export default function Home() {
               <MetricsCard value="60+" label="Team Size" delay={0.5} />
             </div>
           </div>
+
+          {/* Trusted by — scrolling logo marquee */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-10 max-w-6xl mx-auto"
+          >
+            <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-5">
+              Trusted by leaders at
+            </p>
+            <div
+              className="relative overflow-hidden"
+              style={{
+                maskImage:
+                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              }}
+            >
+              <div className="flex w-max animate-marquee gap-12 md:gap-16 items-center">
+                {[...TRUSTED_LOGOS, ...TRUSTED_LOGOS].map((logo, i) => (
+                  <div
+                    key={`${logo.name}-${i}`}
+                    className="shrink-0 flex items-center justify-center h-10 md:h-12"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className={`${logo.heightClass} w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300`}
+                      style={{
+                        filter: "brightness(0) invert(1)",
+                      }}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
